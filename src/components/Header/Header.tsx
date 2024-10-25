@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import Sphere from "../../assets/Sphere";
+import { mainMenuPC, MenuItem } from "../../utils/utils";
 
 const Header = () => {
   return (
@@ -7,18 +8,16 @@ const Header = () => {
       <Sphere />
       <nav>
         <ul className="flex gap-7">
-          <li>
-            <Link to="#">ABOUT ME</Link>
-          </li>
-          <li>
-            <Link to="#">SKILLS</Link>
-          </li>
-          <li>
-            <Link to="#">PROJECTS</Link>
-          </li>
-          <li>
-            <Link to="#">EXPERIENCES</Link>
-          </li>
+          {mainMenuPC.map((item: MenuItem) => {
+            return (
+              <li key={item.id} className="group">
+                <HashLink smooth to={item.hashLink}>
+                  {item.name}
+                </HashLink>
+                <div className="w-0 h-px bg-mainBlack transition-all group-hover:w-full"></div>
+              </li>
+            );
+          })}
         </ul>
       </nav>
       <button className="border border-mainBlack rounded-full py-1.5 px-5 transition hover:bg-mainBlack hover:text-white">

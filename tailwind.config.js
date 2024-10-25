@@ -2,7 +2,7 @@ import plugin from "tailwindcss/plugin";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -20,6 +20,9 @@ export default {
         nunitoSans: ["Nunito Sans", "sans-serif"],
         pretendard: "Pretendard",
       },
+      letterSpacing: {
+        titleSpacing: "-0.03em",
+      },
       keyframes: {
         sphereRotateY: {
           "0%": { transform: "rotateY(0deg)" },
@@ -28,7 +31,10 @@ export default {
         },
       },
       animation: {
-        "sphereY": "sphereRotateY 10s infinite linear",
+        sphereY: "sphereRotateY 10s infinite linear",
+      },
+      height: {
+        168: "42rem",
       },
     },
   },
