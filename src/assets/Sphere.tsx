@@ -1,7 +1,7 @@
 const Sphere = () => {
   return (
     <div className="perspective-1000">
-      <div className="w-12 h-12 relative preserve-3d rotate-x">
+      <div className="w-12 h-12 relative preserve-3d animate-sphereY">
         {/* X Axis */}
         <div className="circle circleBorder rotate3d-x-0"></div>
         <div className="circle circleBorder rotate3d-x-25"></div>

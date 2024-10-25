@@ -2,7 +2,7 @@ import plugin from "tailwindcss/plugin";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
       colors: {
@@ -21,24 +21,24 @@ export default {
         pretendard: "Pretendard",
       },
       keyframes: {
-        sphereX: {
-          "0%": { transform: "rotateY(0deg) rotateX(0deg) rotateZ(0deg)" },
-          "50%": { transform: "rotateY(0deg) rotateX(180deg) rotateZ(0deg)" },
-          "100%": { transform: "rotateY(0deg) rotateX(360deg) rotateZ(0deg)" },
+        sphereRotateY: {
+          "0%": { transform: "rotateY(0deg)" },
+          "50%": { transform: "rotateY(180deg)" },
+          "100%": { transform: "rotateY(360deg)" },
         },
       },
       animation: {
-        "rotate-x": "sphereX 5s infinite linear",
+        "sphereY": "sphereRotateY 10s infinite linear",
       },
     },
   },
   plugins: [
     plugin(function ({ addUtilities }) {
       addUtilities({
-        "perspective-1000": {
+        ".perspective-1000": {
           perspective: "1000px",
         },
-        "preserve-3d": {
+        ".preserve-3d": {
           transformStyle: "preserve-3d",
         },
         ".circle": {
