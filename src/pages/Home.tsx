@@ -3,8 +3,8 @@ import Sphere from "../assets/Sphere";
 
 const Home = () => {
   return (
-    <section>
-      <div className="relative">
+    <>
+      <section className="relative pt-24 z-10">
         <div className="mainArrow">
           <div className="w-full h-full relative flex items-center">
             <span className="absolute top-8.5 w-4 h-0.75 rounded-sm bg-mainBlack -rotate-45 origin-left"></span>
@@ -13,21 +13,21 @@ const Home = () => {
           </div>
         </div>
         <motion.div
-          className="w-96 h-96 absolute top-14 right-negative20 rounded-full circleBorder overflow-hidden"
+          className="w-96 h-96 absolute top-38 right-negative20 rounded-full circleBorder overflow-hidden"
           transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.05 }}
         >
           <Sphere area={"home1"} />
         </motion.div>
         <motion.div
-          className="w-80 h-80 absolute top-125 right-96 rounded-full circleBorder overflow-hidden"
+          className="w-80 h-80 absolute top-149 right-96 rounded-full circleBorder overflow-hidden"
           transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.05 }}
         >
           <Sphere area={"home2"} />
         </motion.div>
         <motion.div
-          className="w-44 h-44 absolute top-96 right-40"
+          className="w-44 h-44 absolute top-120 right-40"
           transition={{ duration: 0.5 }}
           whileHover={{ scale: 1.1 }}
         >
@@ -35,7 +35,7 @@ const Home = () => {
             <Sphere area={"home3"} />
           </div>
         </motion.div>
-        <div className="px-24 h-168 flex flex-col justify-between">
+        <div className="px-24 h-168 flex flex-col justify-between mb-12">
           <div className="font-nunitoSans flex flex-col">
             <div className="text-title font-bold leading-none tracking-titleSpacing flex items-center gap-5 mt-20">
               <h1>PORTFOLIO</h1>
@@ -81,8 +81,19 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section>
+        <div className="w-400 h-235">
+          <div className="w-full h-120 bg-lightBlueGrey overflow-hidden rounded-r-full relative">
+            <img
+              src="/img/graphic01.png"
+              alt="graphic image"
+              className="absolute top-1/4 left-1/2 -translate-x-2/4"
+            />
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

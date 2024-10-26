@@ -1,11 +1,23 @@
+import { useNavigate, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Sphere from "../../assets/Sphere";
 import { mainMenuPC, MenuItem } from "../../utils/utils";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const pathSegments = location.pathname.split("/").filter(Boolean)[0];
+
   return (
     <div className="w-full flex justify-between items-center font-nunitoSans">
-      <div className="w-12 h-12 rounded-full circleBorder overflow-hidden">
+      <div
+        className="w-12 h-12 rounded-full circleBorder overflow-hidden cursor-pointer"
+        onClick={() => {
+          pathSegments === "project"
+            ? navigate("/home")
+            : window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
         <Sphere area={"header"} />
       </div>
       <nav>

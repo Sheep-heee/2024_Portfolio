@@ -12,6 +12,7 @@ export default {
         darkGrey: "#777777",
         mainBlack: "#333333",
         blue: `#5D61D3`,
+        lightBlueGrey: "#EBEAEE",
       },
       fontSize: {
         title: "12rem",
@@ -57,13 +58,22 @@ export default {
         sphereHome3: "sphereRotateHome3 40s infinite linear",
         sphereBounce3: "sphereBounceHome3 5s infinite ease-out",
       },
+      width: {
+        308: "77rem",
+        400: "100rem",
+      },
       height: {
         0.75: "0.2rem",
+        120: "30rem",
         168: "42rem",
+        235: "59rem",
       },
       inset: {
-        8.5: "2.125re,",
+        8.5: "2.15rem",
+        38: "9.5rem",
+        120: "30rem",
         125: "31rem",
+        149: "37rem",
         negative20: "-5rem",
       },
     },
@@ -75,7 +85,7 @@ export default {
           width: "calc(100% - 752px)",
           height: "4.5rem",
           position: "absolute",
-          top: "272px",
+          top: "368px",
           right: "0",
         },
         ".perspective-1000": {
