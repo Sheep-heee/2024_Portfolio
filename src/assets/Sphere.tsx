@@ -1,7 +1,28 @@
-const Sphere = () => {
+interface Props {
+  area: string;
+}
+
+const animationPick = (area: string): string => {
+  switch (area) {
+    case "header":
+      return "animate-sphereY";
+    case "home1":
+      return "animate-sphereHome1";
+    case "home2":
+      return "animate-sphereHome2";
+    case "home3":
+      return "animate-sphereHome3";
+    default:
+      return "";
+  }
+};
+
+const Sphere = ({ area }: Props) => {
   return (
-    <div className="perspective-1000">
-      <div className="w-12 h-12 relative preserve-3d animate-sphereY">
+    <div className="w-full h-full perspective-1000">
+      <div
+        className={`w-full h-full relative preserve-3d ${animationPick(area)}`}
+      >
         {/* X Axis */}
         <div className="circle circleBorder rotate3d-x-0"></div>
         <div className="circle circleBorder rotate3d-x-25"></div>

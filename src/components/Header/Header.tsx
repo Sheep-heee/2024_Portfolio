@@ -5,7 +5,9 @@ import { mainMenuPC, MenuItem } from "../../utils/utils";
 const Header = () => {
   return (
     <div className="w-full flex justify-between items-center font-nunitoSans">
-      <Sphere />
+      <div className="w-12 h-12 rounded-full circleBorder overflow-hidden">
+        <Sphere area={"header"} />
+      </div>
       <nav>
         <ul className="flex gap-7">
           {mainMenuPC.map((item: MenuItem) => {

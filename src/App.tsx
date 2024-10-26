@@ -22,7 +22,7 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <div className="bg-bgGrey text-mainBlack">
+    <div className="bg-bgGrey text-mainBlack overflow-hidden">
       <RouterProvider router={router} />
     </div>
   );

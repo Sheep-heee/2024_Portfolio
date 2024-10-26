@@ -29,18 +29,55 @@ export default {
           "50%": { transform: "rotateY(180deg)" },
           "100%": { transform: "rotateY(360deg)" },
         },
+        sphereRotateHome1: {
+          "0%": { transform: "rotateX(0deg) rotateY(0deg)" },
+          "50%": { transform: "rotateX(180deg) rotateY(180deg)" },
+          "100%": { transform: "rotateX(360deg) rotateY(360deg)" },
+        },
+        sphereRotateHome2: {
+          "0%": { transform: "rotateX(0deg) rotateY(0deg)" },
+          "50%": { transform: "rotateX(-180deg) rotateY(180deg)" },
+          "100%": { transform: "rotateX(-360deg) rotateY(360deg)" },
+        },
+        sphereRotateHome3: {
+          "0%": { transform: "rotateX(0deg) rotateY(0deg)" },
+          "50%": { transform: "rotateX(180deg) rotateY(-180deg)" },
+          "100%": { transform: "rotateX(360deg) rotateY(-360deg)" },
+        },
+        sphereBounceHome3: {
+          "0%": { transform: "translateX(0) translateY(-30%)" },
+          "50%": { transform: "translateX(5%) translateY(0)" },
+          "100%": { transform: "translateX(0) translateY(-30%)" },
+        },
       },
       animation: {
         sphereY: "sphereRotateY 10s infinite linear",
+        sphereHome1: "sphereRotateHome1 20s infinite linear",
+        sphereHome2: "sphereRotateHome2 15s infinite linear",
+        sphereHome3: "sphereRotateHome3 40s infinite linear",
+        sphereBounce3: "sphereBounceHome3 5s infinite ease-out",
       },
       height: {
+        0.75: "0.2rem",
         168: "42rem",
+      },
+      inset: {
+        8.5: "2.125re,",
+        125: "31rem",
+        negative20: "-5rem",
       },
     },
   },
   plugins: [
     plugin(function ({ addUtilities }) {
       addUtilities({
+        ".mainArrow": {
+          width: "calc(100% - 752px)",
+          height: "4.5rem",
+          position: "absolute",
+          top: "272px",
+          right: "0",
+        },
         ".perspective-1000": {
           perspective: "1000px",
         },
