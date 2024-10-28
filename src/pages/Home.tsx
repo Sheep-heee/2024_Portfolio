@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Sphere from "../assets/Sphere";
+import AboutClipImage from "../components/Home/AboutClipImage";
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
           </div>
         </div>
         <motion.div
-          className="w-96 h-96 absolute top-38 right-negative20 rounded-full circleBorder overflow-hidden"
+          className="w-96 h-96 absolute top-38 -right-20 rounded-full circleBorder overflow-hidden"
           transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.05 }}
         >
@@ -84,13 +85,7 @@ const Home = () => {
       </section>
       <section>
         <div className="w-400 h-235">
-          <div className="w-full h-120 bg-lightBlueGrey overflow-hidden rounded-r-full relative">
-            <img
-              src="/img/graphic01.png"
-              alt="graphic image"
-              className="absolute top-1/4 left-1/2 -translate-x-2/4"
-            />
-          </div>
+          <AboutClipImage />
         </div>
       </section>
     </>

@@ -74,7 +74,6 @@ export default {
         120: "30rem",
         125: "31rem",
         149: "37rem",
-        negative20: "-5rem",
       },
     },
   },

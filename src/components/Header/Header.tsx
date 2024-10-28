@@ -34,7 +34,7 @@ const Header = () => {
           })}
         </ul>
       </nav>
-      <button className="border border-mainBlack rounded-full py-1.5 px-5 transition hover:bg-mainBlack hover:text-white">
+      <button className="border border-mainBlack bg-bgGrey rounded-full py-1.5 px-5 transition hover:bg-mainBlack hover:text-bgGrey">
         CONTACT
       </button>
     </div>
