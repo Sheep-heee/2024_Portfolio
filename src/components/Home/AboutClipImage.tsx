@@ -1,40 +1,56 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { scrollY } from "../../utils/utils";
 
-const AboutClipImage = () => {
-  const imageContainer = useRef<HTMLDivElement>(null);
-  const [clipPath, setClipPath] = useState("inset(0 0 0 0 round 0 50% 50% 0)");
+const AboutClipImage = ({ scrollY }: scrollY) => {
+  const [clipPath, setClipPath] = useState(
+    "inset(0% 0% 70% 0% round 0% 50% 50% 0%)"
+  );
 
   const handleScroll = () => {
-    if (imageContainer.current) {
-      const scrollTop = imageContainer.current.scrollTop;
-      const maxScroll =
-        imageContainer.current.scrollHeight -
-        imageContainer.current.clientHeight;
-      const scrollPercent = scrollTop / maxScroll;
+    if (scrollY >= 440 && scrollY <= 1760) {
+      const scrollPercent = ((scrollY - 440) / (1760 - 440)) * 100;
 
-      const insetValue = scrollPercent * 50;
+      const topValue = (percent: number): number => {
+        switch (true) {
+          case 0 <= percent && percent <= 29:
+            return percent;
+          case percent > 29:
+            return 29;
+          case percent < 0:
+            return 0;
+          default:
+            return 0;
+        }
+      };
+
+      const bottomValue = (percent: number): number => {
+        switch (true) {
+          case percent >= 41:
+            return percent;
+          case percent < 41:
+            return 41;
+          default:
+            return 0;
+        }
+      };
+
       setClipPath(
-        `inset(${insetValue}% 0 ${50 - insetValue}% 0 round 0 50% 50% 0)`
+        `inset(${topValue(scrollPercent)}% 0% ${bottomValue(70 - scrollPercent)}% 0% round 0% 50% 50% 0%)`
       );
     }
   };
 
   useEffect(() => {
-    const container = imageContainer.current;
-    if (container) {
-      container.addEventListener("scroll", handleScroll);
-    }
-    return () => {
-      if (container) {
-        container.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, []);
+    handleScroll();
+  }, [scrollY]);
 
   return (
     <div
-      className="w-full h-full bg-lightBlueGrey overflow-hidden relative"
-      ref={imageContainer}
+      className="w-full pt-[100%] bg-lightBlueGrey overflow-hidden relative"
+      style={{
+        transition: "clip-path 0.6s ease",
+        clipPath: clipPath,
+      }}
     >
       <img
         src="/img/graphic01.png"

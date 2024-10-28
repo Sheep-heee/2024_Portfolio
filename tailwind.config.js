@@ -67,6 +67,7 @@ export default {
         120: "30rem",
         168: "42rem",
         235: "59rem",
+        400: "100rem",
       },
       inset: {
         8.5: "2.15rem",

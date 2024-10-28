@@ -1,8 +1,23 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Sphere from "../assets/Sphere";
 import AboutClipImage from "../components/Home/AboutClipImage";
 
 const Home = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  const updateScrollY = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScrollY);
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollY);
+    };
+  }, []);
+
   return (
     <>
       <section className="relative pt-24 z-10">
@@ -21,7 +36,7 @@ const Home = () => {
           <Sphere area={"home1"} />
         </motion.div>
         <motion.div
-          className="w-80 h-80 absolute top-149 right-96 rounded-full circleBorder overflow-hidden"
+          className="w-80 h-80 absolute top-149 right-96 rounded-full circleBorder overflow-hidden bg-bgGrey"
           transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.05 }}
         >
@@ -85,7 +100,7 @@ const Home = () => {
       </section>
       <section>
         <div className="w-400 h-235">
-          <AboutClipImage />
+          <AboutClipImage scrollY={scrollY} />
         </div>
       </section>
     </>

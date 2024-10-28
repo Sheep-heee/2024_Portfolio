@@ -26,3 +26,7 @@ export const mainMenuPC: MenuItem[] = [
     hashLink: "#",
   },
 ];
+
+export interface scrollY {
+  scrollY: number;
+}
