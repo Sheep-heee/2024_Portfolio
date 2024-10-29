@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Sphere from "../assets/Sphere";
 import AboutClipImage from "../components/Home/AboutClipImage";
+import BirthdayCake from "../assets/icon/ui_icon/BirthdayCake";
+import SmartphoneIcon from "../assets/icon/ui_icon/SmartphoneIcon";
+import EmailIcon from "../assets/icon/ui_icon/EmailIcon";
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -20,7 +23,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="relative pt-24 z-10">
+      <section id="main" className="relative pt-24 z-10">
         <div className="mainArrow">
           <div className="w-full h-full relative flex items-center">
             <span className="absolute top-8.5 w-4 h-0.75 rounded-sm bg-mainBlack -rotate-45 origin-left"></span>
@@ -98,9 +101,58 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section id="aboutme" className="w-full h-auto relative">
         <div className="w-400 h-235">
           <AboutClipImage scrollY={scrollY} />
+        </div>
+        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20">
+          <div className="ml-56 font-pretendard flex flex-col gap-5">
+            <span className="text-white text-4xl font-semibold">
+              안녕하세요, 프론트엔드 개발자&nbsp;
+              <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md">
+                양희진
+              </span>
+              &nbsp;입니다.
+            </span>
+            <span className="text-white text-xl font-light flex flex-col">
+              <span>
+                쇼핑몰의 운영 디자이너로 일한 약 6년의 시간동안 시각적인
+                요소에만 집중하였습니다.
+              </span>
+              <span>
+                그러나 단순히 이미지로만 보이는 것보다는 더 인터랙티브한 사용자
+                경험을 제공하고 싶은 욕심이 생겼습니다.
+              </span>
+              <span>그리하여 프론트엔드 개발자의 길을 걷기로 하였습니다.</span>
+            </span>
+            <hr />
+            <div className="flex gap-8">
+              <div className="text-white text-xl font-light flex items-center gap-2">
+                <div className="w-6 h-6 flex items-center justify-center">
+                  <BirthdayCake />
+                </div>
+                1997. 06. 09
+              </div>
+              <div className="text-white text-xl font-light flex items-center gap-2">
+                <div className="w-3 h-3 flex items-center justify-center">
+                  <SmartphoneIcon />
+                </div>
+                010-6429-9645
+              </div>
+              <div className="text-white text-xl font-light flex items-center gap-2">
+                <div className="w-5 h-5 flex items-center justify-center">
+                  <EmailIcon />
+                </div>
+                sheephi0609@gmail.com
+              </div>
+            </div>
+          </div>
+          <div className="w-80 h-96 bg-blue rounded-xl flex items-center justify-center text-white">
+            Photo
+          </div>
+        </div>
+        <div className="w-96 h-200 overflow-hidden absolute bottom-0 left-40">
+          <img src="\img\placeholder_photo.png" alt="human illust" />
         </div>
       </section>
     </>
