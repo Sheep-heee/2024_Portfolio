@@ -5,6 +5,7 @@ import AboutClipImage from "../components/Home/AboutClipImage";
 import BirthdayCake from "../assets/icon/ui_icon/BirthdayCake";
 import SmartphoneIcon from "../assets/icon/ui_icon/SmartphoneIcon";
 import EmailIcon from "../assets/icon/ui_icon/EmailIcon";
+import MySkillsTitle from "../components/Home/MySkillsTitle";
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -154,6 +155,10 @@ const Home = () => {
         <div className="w-96 h-200 overflow-hidden absolute bottom-0 left-40">
           <img src="\img\placeholder_photo.png" alt="human illust" />
         </div>
+      </section>
+      <section id="myskills" className="w-full h-auto relative mt-20">
+        <MySkillsTitle />
+        <div className="h-336"></div>
       </section>
     </>
   );
