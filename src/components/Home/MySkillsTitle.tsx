@@ -1,24 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 
 const MySkillsTitle = () => {
-  const [groups, setGroups] = useState([0, 1, 2, 3]);
+  const [groups, setGroups] = useState<number[]>([0, 1, 2, 3]);
   const controls = useAnimationControls();
+  const groupsRef = useRef(groups);
 
   useEffect(() => {
+    groupsRef.current = groups;
+
     const loopAnimation = async () => {
       while (true) {
         await controls.start({
-          x: -1920,
-          transition: { duration: 15, repeat: Infinity, ease: "linear" },
+          x: -1066,
+          transition: { duration: 6, ease: "linear" },
         });
-        setGroups((prev) => {
-          const updatedGroups = [...prev.slice(1), prev[0]];
-          controls.set({
-            x: 0,
-            transition: { duration: 15, repeat: Infinity, ease: "linear" },
-          });
-          return updatedGroups;
+
+        setGroups(() => {
+          const updatedItems = [
+            ...groupsRef.current.slice(1),
+            groupsRef.current[0],
+          ];
+          groupsRef.current = updatedItems;
+          controls.set({ x: 0 });
+          return updatedItems;
         });
       }
     };
