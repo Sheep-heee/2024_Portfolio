@@ -78,6 +78,14 @@ export default {
         125: "31rem",
         149: "37rem",
       },
+      spacing: {
+        34: "8.5rem",
+      },
+      flexGrow: {
+        2: "2",
+        3: "3",
+        4: "4",
+      },
     },
   },
   plugins: [
@@ -88,6 +96,13 @@ export default {
           height: "4.5rem",
           position: "absolute",
           top: "368px",
+          right: "0",
+        },
+        ".skillArrow": {
+          width: "calc(100% - 670px)",
+          height: "2.25rem",
+          position: "absolute",
+          top: "484px",
           right: "0",
         },
         ".perspective-1000": {

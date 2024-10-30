@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { scrollY } from "../../utils/utils";
+import { ScrollY } from "../../utils/interface";
 
-const AboutClipImage = ({ scrollY }: scrollY) => {
+const AboutClipImage = ({ scrollY }: ScrollY) => {
   const [clipPath, setClipPath] = useState(
     "inset(0% 0% 70% 0% round 0% 50% 50% 0%)"
   );

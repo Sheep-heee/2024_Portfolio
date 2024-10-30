@@ -37,7 +37,7 @@ const MySkillsTitle = () => {
     >
       {groups.map((group) => (
         <div key={group} className="flex gap-14 items-center">
-          <div className="font-nunitoSans font-bold text-title tracking-titleSpacing text-nowrap">
+          <div className="font-bold text-title tracking-titleSpacing text-nowrap">
             MY SKILLS
           </div>
           <div className="w-8 h-8 bg-mainBlack rounded-full"></div>

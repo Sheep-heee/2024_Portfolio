@@ -1,7 +1,8 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Sphere from "../../assets/Sphere";
-import { mainMenuPC, MenuItem } from "../../utils/utils";
+import { mainMenuPC } from "../../utils/utils";
+import { MenuItem } from "../../utils/interface";
 
 const Header = () => {
   const navigate = useNavigate();
