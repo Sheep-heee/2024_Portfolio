@@ -59,6 +59,8 @@ export default {
         sphereBounce3: "sphereBounceHome3 5s infinite ease-out",
       },
       width: {
+        108: "27rem",
+        284: "71rem",
         308: "77rem",
         400: "100rem",
       },

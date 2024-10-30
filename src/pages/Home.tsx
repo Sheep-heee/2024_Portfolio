@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Sphere from "../assets/Sphere";
-import AboutClipImage from "../components/Home/AboutClipImage";
 import BirthdayCake from "../assets/icon/ui_icon/BirthdayCake";
 import SmartphoneIcon from "../assets/icon/ui_icon/SmartphoneIcon";
 import EmailIcon from "../assets/icon/ui_icon/EmailIcon";
-import MySkillsTitle from "../components/Home/MySkillsTitle";
 import CodeTag from "../assets/icon/dev_icon/CodeTag";
 import Arrow from "../assets/Arrow";
+import AboutClipImage from "../components/Home/AboutClipImage";
+import MySkillsTitle from "../components/Home/MySkillsTitle";
 import SkillItem from "../components/Home/SkillItem";
+import { skillsData } from "../utils/utils";
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -137,7 +138,7 @@ const Home = () => {
         <div className="h-336 pt-72 relative">
           <Arrow section={"skill"} />
           <div className="h-full px-32 flex gap-20 pt-28">
-            <div className="grow-3 border-2 border-red-600">
+            <div className="w-284">
               <div className="flex flex-col gap-3 leading-none mb-20">
                 <span className="font-semibold text-7xl">
                   IDEA, DESIGN, DEVELOP
@@ -148,9 +149,17 @@ const Home = () => {
                   </span>
                 </div>
               </div>
-              <SkillItem />
+              {skillsData.map((skill) => (
+                <SkillItem
+                  key={skill.skillId}
+                  skillId={skill.skillId}
+                  skillName={skill.skillName}
+                  description={skill.description}
+                  stacks={skill.stacks}
+                />
+              ))}
             </div>
-            <div className="grow-4 border-2 border-red-600"></div>
+            <div className="grow border border-red-600"></div>
           </div>
         </div>
       </section>

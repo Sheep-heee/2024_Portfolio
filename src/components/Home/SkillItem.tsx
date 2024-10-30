@@ -1,9 +1,23 @@
 import { useState } from "react";
 import ShortArrow from "../../assets/icon/ui_icon/ShortArrow";
-import HTML5Icon from "../../assets/icon/dev_icon/HTML5Icon";
+import ToolItem from "../Common/ToolItem";
+import { Stack, SkillsData, Divide } from "../../utils/interface";
 
-const SkillItem = () => {
+const SkillItem = ({ skillId, skillName, description, stacks }: SkillsData) => {
   const [descOpen, setDescOpen] = useState(false);
+  const divideStacks = ((stacks: Stack[]): Divide[] => {
+    const rowDivide: Divide[] = [];
+    if (skillId !== 4) {
+      const rows = Math.ceil(stacks.length / 3);
+
+      for (let i = 0; i < rows; i++) {
+        const start = i * 3;
+        const end = start + 3;
+        rowDivide.push({ [i]: stacks.slice(start, end) });
+      }
+    }
+    return rowDivide;
+  })(stacks);
 
   return (
     <div className="border-b border-grey">
@@ -12,27 +26,32 @@ const SkillItem = () => {
         onClick={() => setDescOpen(!descOpen)}
       >
         <div className="flex items-end">
-          <div className="w-56 font-bold text-2xl leading-none">Publishing</div>
+          <div className="w-56 font-bold text-2xl leading-none">
+            {skillName}
+          </div>
           <div className="flex gap-3">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="flex items-center gap-1 py-2 px-5 bg-white rounded-xl">
-                <HTML5Icon />
-                <span className="uppercase font-bold text-xl leading-none">
-                  HTML5
-                </span>
-              </div>
-              <div className="flex items-center gap-1 py-2 px-5 bg-white rounded-xl">
-                <HTML5Icon />
-                <span className="uppercase font-bold text-xl leading-none">
-                  HTML5
-                </span>
-              </div>
-              <div className="flex items-center gap-1 py-2 px-5 bg-white rounded-xl">
-                <HTML5Icon />
-                <span className="uppercase font-bold text-xl leading-none">
-                  HTML5
-                </span>
-              </div>
+            <div
+              className={`flex ${skillId === 4 ? "gap-4" : "flex-col gap-3"}`}
+            >
+              {skillId === 4
+                ? stacks.map((stack) => (
+                    <ToolItem
+                      key={stack.toolId}
+                      toolsName={stack.toolsName}
+                      iconCode={stack.iconCode}
+                    />
+                  ))
+                : divideStacks.map((row, idx) => (
+                    <div key={idx} className="flex gap-4">
+                      {row[idx].map((item) => (
+                        <ToolItem
+                          key={item.toolId}
+                          toolsName={item.toolsName}
+                          iconCode={item.iconCode}
+                        />
+                      ))}
+                    </div>
+                  ))}
             </div>
           </div>
         </div>
@@ -45,8 +64,7 @@ const SkillItem = () => {
       <div
         className={`${descOpen ? "h-auto" : "h-0"} ml-56 font-pretendard ${descOpen ? "pb-6" : "pb-0"} overflow-hidden transition-all`}
       >
-        HTML, CSS를 사용하여 웹페이지를 구현한 뒤 Javascript로 동적인 사용자
-        경험을 제공할 수 있습니다.
+        {description}
       </div>
     </div>
   );

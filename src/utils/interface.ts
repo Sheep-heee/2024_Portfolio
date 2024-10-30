@@ -12,15 +12,19 @@ export interface Section {
   section: string;
 }
 
-interface Stack {
-  toolId: number;
+export interface Stack {
+  toolId?: number;
   toolsName: string;
-  iconCode: string;
+  iconCode: React.ReactNode;
 }
 
 export interface SkillsData {
-  skillId: number;
+  skillId?: number;
   skillName: string;
   description: string;
-  stack: Stack[];
+  stacks: Stack[];
+}
+
+export interface Divide {
+  [key: number]: Stack[];
 }
