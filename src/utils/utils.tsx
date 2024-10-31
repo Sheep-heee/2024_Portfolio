@@ -78,7 +78,7 @@ export const skillsData: SkillsData[] = [
     skillId: 1,
     skillName: "Frontend",
     description:
-      "React.js와 typescript로 웹페이지의 전체적인 구조를 정의하고 기능을 추가 react-redux와 react-query로 상태 관리를 통해 효율적인 데이터 흐름을 구축하고, 비동기 데이터 처리를 최적화합니다. 스타일 도구들을 사용해서 사용자에게 시각적으로 매력적이고 일관된 UI를 제공합니다.",
+      "React.js와 typescript로 웹페이지의 전체적인 구조를 정의하고 기능을 추가 React-Redux와 React-Query로 상태 관리를 통해 효율적인 데이터 흐름을 구축하고, 비동기 데이터 처리를 최적화합니다. 스타일 도구들을 사용해서 사용자에게 시각적으로 매력적이고 일관된 UI를 제공합니다.",
     stacks: [
       {
         toolId: 3,
@@ -169,7 +169,7 @@ export const skillsData: SkillsData[] = [
     skillId: 3,
     skillName: "Graphic",
     description:
-      "figma를 이용하여 사용자 경험을 위한 ui/ux 디자인을 설계할 수 있습니다. adobe 툴을 사용하여 그래픽 작업이 가능합니다.",
+      "Figma를 이용하여 사용자 경험을 위한 ui/ux 디자인을 설계할 수 있습니다. Adobe 툴을 사용하여 그래픽 작업이 가능합니다.",
     stacks: [
       {
         toolId: 18,
@@ -192,7 +192,7 @@ export const skillsData: SkillsData[] = [
     skillId: 4,
     skillName: "Productivity",
     description:
-      "github을 통해 코드와 프로젝트 관리를 할 수 있습니다. notion 등을 비롯한 툴로 문서 작업이 가능합니다.",
+      "GitHub을 통해 코드와 프로젝트 관리를 할 수 있습니다. notion 등을 비롯한 툴로 문서 작업이 가능합니다.",
     stacks: [
       {
         toolId: 21,

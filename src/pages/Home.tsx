@@ -7,6 +7,7 @@ import EmailIcon from "../assets/icon/ui_icon/EmailIcon";
 import CodeTag from "../assets/icon/dev_icon/CodeTag";
 import Arrow from "../assets/Arrow";
 import AboutClipImage from "../components/Home/AboutClipImage";
+import SkillsClipImage from "../components/Home/SkillsClipImage";
 import MySkillsTitle from "../components/Home/MySkillsTitle";
 import SkillItem from "../components/Home/SkillItem";
 import { skillsData } from "../utils/utils";
@@ -135,7 +136,7 @@ const Home = () => {
         className="w-full h-auto relative mt-20 font-nunitoSans"
       >
         <MySkillsTitle />
-        <div className="h-336 pt-72 relative">
+        <div className="h-auto pt-72 pb-24 relative">
           <Arrow section={"skill"} />
           <div className="h-full px-32 flex gap-20 pt-28">
             <div className="w-284">
@@ -159,7 +160,9 @@ const Home = () => {
                 />
               ))}
             </div>
-            <div className="grow border border-red-600"></div>
+            <div className="grow flex relative">
+              <SkillsClipImage scrollY={scrollY} />
+            </div>
           </div>
         </div>
       </section>

@@ -8,11 +8,12 @@ export default {
       colors: {
         bgGrey: "#F7F7F8",
         lightGrey: "#eaeaea",
+        lightBlueGrey: "#EBEAEE",
         grey: "#d9d9d9",
+        warmGrey: "#DFE1D3",
         darkGrey: "#777777",
         mainBlack: "#333333",
         blue: `#5D61D3`,
-        lightBlueGrey: "#EBEAEE",
       },
       fontSize: {
         title: "12rem",
@@ -70,6 +71,7 @@ export default {
         168: "42rem",
         200: "50rem",
         235: "59rem",
+        308: "77rem",
         336: "84rem",
         400: "100rem",
       },
