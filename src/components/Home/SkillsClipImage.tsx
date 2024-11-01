@@ -6,10 +6,11 @@ import Sphere from "../../assets/Sphere";
 const SkillsClipImage = ({ scrollY }: ScrollY) => {
   const [clipPath, setClipPath] = useState("inset(5% 0% 0% 0% round 24px)");
   const [translateY, setTranslateY] = useState("translateY(0)");
+  const [sphereTranslateY, setSphereTranslateY] = useState("translateY(0)");
 
   const handleScroll = () => {
-    if (scrollY >= 1800 && scrollY <= 3290) {
-      const scrollPercent = ((scrollY - 1800) / (3290 - 1800)) * 100;
+    if (scrollY >= 1800 && scrollY <= 3273) {
+      const scrollPercent = ((scrollY - 1800) / (3273 - 1800)) * 100;
 
       const topValue = (percent: number): number => {
         switch (true) {
@@ -25,7 +26,16 @@ const SkillsClipImage = ({ scrollY }: ScrollY) => {
       };
 
       setClipPath(`inset(${topValue(scrollPercent)}% 0% 0% 0% round 24px)`);
-      setTranslateY(`translateY(${scrollPercent}%)`);
+      setTranslateY(
+        scrollPercent <= 50
+          ? `translateY(${scrollPercent}%)`
+          : "translateY(50%)"
+      );
+      setSphereTranslateY(
+        scrollPercent * 5 <= 274
+          ? `translateY(${scrollPercent * 5}%)`
+          : "translateY(274%)"
+      );
     }
   };
 
@@ -47,26 +57,28 @@ const SkillsClipImage = ({ scrollY }: ScrollY) => {
           src="/img/graphic02.png"
           alt="graphic image"
           className="absolute top-52 -right-16 scale-125"
-          style={{
-            transition: "transform 0.3s",
-            transform: "translateY(((scrollY - 1800) / (3290 - 1800)) * 100)",
-          }}
         />
       </div>
-      <motion.div
-        className="w-32 h-32 absolute right-20 rounded-full circleBorder overflow-hidden bg-bgGrey"
-        animate={{
-          y: [0, -180, -200, -200, 50, 0],
-          rotate: [0, 0, 360, 360, 0, 0],
-        }}
-        transition={{
-          times: [0, 2, 2, 1, 5, 10],
-          repeat: Infinity,
-          repeatDelay: 0.5,
+      <div
+        className="w-32 h-32 absolute right-20"
+        style={{
+          transition: "transform 0.6s",
+          transform: sphereTranslateY,
         }}
       >
-        <Sphere area={"home2"} />
-      </motion.div>
+        <motion.div
+          className="w-full h-full rounded-full circleBorder overflow-hidden bg-bgGrey"
+          animate={{
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+          }}
+        >
+          <Sphere area={"home2"} />
+        </motion.div>
+      </div>
     </>
   );
 };

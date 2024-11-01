@@ -151,13 +151,7 @@ const Home = () => {
                 </div>
               </div>
               {skillsData.map((skill) => (
-                <SkillItem
-                  key={skill.skillId}
-                  skillId={skill.skillId}
-                  skillName={skill.skillName}
-                  description={skill.description}
-                  stacks={skill.stacks}
-                />
+                <SkillItem key={skill.skillId} {...skill} />
               ))}
             </div>
             <div className="grow flex relative">
