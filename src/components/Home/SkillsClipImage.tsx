@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { ScrollY } from "../../utils/interface";
+import { RootState } from "../../redux/reducers";
 import Sphere from "../../assets/Sphere";
 
-const SkillsClipImage = ({ scrollY }: ScrollY) => {
+const SkillsClipImage = () => {
+  const scrollY = useSelector((state: RootState) => state.scrollY.scrollY);
+
   const [clipPath, setClipPath] = useState("inset(5% 0% 0% 0% round 24px)");
   const [translateY, setTranslateY] = useState("translateY(0)");
   const [sphereTranslateY, setSphereTranslateY] = useState("translateY(0)");

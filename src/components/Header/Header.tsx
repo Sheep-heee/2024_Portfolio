@@ -1,13 +1,29 @@
+import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useDispatch } from "react-redux";
+import { Dispatch } from "redux";
 import Sphere from "../../assets/Sphere";
 import { mainMenuPC } from "../../utils/utils";
 import { MenuItem } from "../../utils/interface";
+import {
+  ScrollYActionType,
+  updateScrollY,
+} from "../../redux/actions/scrollValueAction";
 
 const Header = () => {
+  const dispatch: Dispatch<ScrollYActionType> = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const pathSegments = location.pathname.split("/").filter(Boolean)[0];
+
+  const handleScroll = () => {
+    dispatch(updateScrollY(window.scrollY));
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="w-full flex justify-between items-center font-nunitoSans">

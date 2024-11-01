@@ -1,12 +1,11 @@
-let scrollY = 0;
+export const UPDATE_SCROLL_Y = "UPDATE_SCROLL_Y";
 
-const handleScroll = () => {
-  scrollY = window.scrollY;
-};
+export interface ScrollYActionType {
+  type: typeof UPDATE_SCROLL_Y;
+  payload: number;
+}
 
-const updateScrollY = () => {
-  window.addEventListener("scroll", handleScroll);
-  return scrollY;
-};
-
-export const scrollValueAction = { updateScrollY };
+export const updateScrollY = (scrollY: number): ScrollYActionType => ({
+  type: UPDATE_SCROLL_Y,
+  payload: scrollY,
+});

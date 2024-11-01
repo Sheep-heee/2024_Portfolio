@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
-import { ScrollY } from "../../utils/interface";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/reducers";
 
-const AboutClipImage = ({ scrollY }: ScrollY) => {
+const AboutClipImage = () => {
+  const scrollY = useSelector((state: RootState) => state.scrollY.scrollY);
+
   const [clipPath, setClipPath] = useState(
     "inset(0% 0% 70% 0% round 0% 50% 50% 0%)"
   );
