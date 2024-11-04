@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Sphere from "../assets/Sphere";
 import BirthdayCake from "../assets/icon/ui_icon/BirthdayCake";
@@ -13,20 +12,6 @@ import SkillItem from "../components/Home/SkillItem";
 import { skillsData } from "../utils/utils";
 
 const Home = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  const updateScrollY = () => {
-    setScrollY(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", updateScrollY);
-
-    return () => {
-      window.removeEventListener("scroll", updateScrollY);
-    };
-  }, []);
-
   return (
     <>
       <section id="main" className="relative pt-24 z-10">
@@ -79,7 +64,7 @@ const Home = () => {
       </section>
       <section id="aboutme" className="w-full h-auto relative">
         <div className="w-400 h-235">
-          <AboutClipImage scrollY={scrollY} />
+          <AboutClipImage />
         </div>
         <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20">
           <div className="ml-56 font-pretendard flex flex-col gap-5">
@@ -155,7 +140,7 @@ const Home = () => {
               ))}
             </div>
             <div className="grow flex relative">
-              <SkillsClipImage scrollY={scrollY} />
+              <SkillsClipImage />
             </div>
           </div>
         </div>
