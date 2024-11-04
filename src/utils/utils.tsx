@@ -1,4 +1,4 @@
-import { MenuItem, SkillsData } from "./interface";
+import { MenuItem, SkillsData, ProjectTab } from "./interface";
 import {
   HTML5Icon,
   CSS3Icon,
@@ -215,5 +215,28 @@ export const skillsData: SkillsData[] = [
         iconCode: <GoogleOfficeIcon />,
       },
     ],
+  },
+];
+
+export const projectTab: ProjectTab[] = [
+  {
+    id: 0,
+    name: "ALL",
+    active: true,
+  },
+  {
+    id: 1,
+    name: "ORGANIZATION",
+    active: false,
+  },
+  {
+    id: 2,
+    name: "WEB APPLICATION",
+    active: false,
+  },
+  {
+    id: 3,
+    name: "OTHER",
+    active: false,
   },
 ];

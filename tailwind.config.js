@@ -61,6 +61,7 @@ export default {
       },
       width: {
         108: "27rem",
+        128: "32rem",
         284: "71rem",
         308: "77rem",
         400: "100rem",
