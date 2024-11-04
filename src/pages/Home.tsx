@@ -10,6 +10,7 @@ import SkillsClipImage from "../components/Home/SkillsClipImage";
 import MySkillsTitle from "../components/Home/MySkillsTitle";
 import SkillItem from "../components/Home/SkillItem";
 import { skillsData } from "../utils/utils";
+import ProjectsLayout from "../components/Projects/ProjectsLayout";
 
 const Home = () => {
   return (
@@ -144,6 +145,12 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section
+        id="projects"
+        className="w-full h-screen bg-mainBlack px-32 py-24 text-white overflow-hidden"
+      >
+        <ProjectsLayout />
       </section>
     </>
   );

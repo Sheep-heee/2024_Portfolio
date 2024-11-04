@@ -35,20 +35,12 @@ const SkillItem = ({ skillId, skillName, description, stacks }: SkillsData) => {
             >
               {skillId === 4
                 ? stacks.map((stack) => (
-                    <ToolItem
-                      key={stack.toolId}
-                      toolsName={stack.toolsName}
-                      iconCode={stack.iconCode}
-                    />
+                    <ToolItem key={stack.toolId} {...stack} />
                   ))
                 : divideStacks.map((row, idx) => (
                     <div key={idx} className="flex gap-4">
                       {row[idx].map((item) => (
-                        <ToolItem
-                          key={item.toolId}
-                          toolsName={item.toolsName}
-                          iconCode={item.iconCode}
-                        />
+                        <ToolItem key={item.toolId} {...item} />
                       ))}
                     </div>
                   ))}

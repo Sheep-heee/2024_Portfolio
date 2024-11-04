@@ -61,12 +61,15 @@ export default {
       },
       width: {
         108: "27rem",
+        128: "32rem",
+        129: "32.25rem",
         284: "71rem",
         308: "77rem",
         400: "100rem",
       },
       height: {
         0.75: "0.2rem",
+        88: "22rem",
         120: "30rem",
         168: "42rem",
         200: "50rem",
@@ -108,6 +111,9 @@ export default {
           position: "absolute",
           top: "484px",
           right: "0",
+        },
+        ".projectSlideArrow": {
+          width: "calc(100% + 40px)",
         },
         ".perspective-1000": {
           perspective: "1000px",
