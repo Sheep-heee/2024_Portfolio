@@ -1,9 +1,5 @@
-import React from 'react'
-
 const ProjectDetail = () => {
-  return (
-    <div>ProjectDetail</div>
-  )
-}
+  return <div className="pt-24">ProjectDetail</div>;
+};
 
-export default ProjectDetail
+export default ProjectDetail;

@@ -35,13 +35,24 @@ export interface ProjectTab {
   active: boolean;
 }
 
+export interface ProjectDataDetail {
+  thumbnail_big: string;
+  description: string;
+  role: string;
+  siteUrl: string;
+  gitHubUrl: string;
+  notionUrl: string;
+  previewImg: string[];
+}
+
 export interface ProjectData {
   id: string;
   name: string;
   date: string;
-  thumbnail: string;
-  description: string;
+  thumbnail_small: string;
+  overview: string;
   scale: string;
   category: string;
   toolId: number[];
+  projectDetail: ProjectDataDetail;
 }

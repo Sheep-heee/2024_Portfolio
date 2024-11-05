@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, useAnimationControls } from "framer-motion";
 import { projectTab } from "../../utils/utils";
 import projectData from "../../utils/projectsData.json";
@@ -8,6 +9,7 @@ import ProjectThum from "./ProjectThum";
 import SmallArrow from "../../assets/icon/ui_icon/SmallArrow";
 
 const ProjectsLayout = () => {
+  const navigate = useNavigate();
   const [newTab, setNewTab] = useState(projectTab);
   const [newProjectData, setNewProjectData] = useState(projectData);
   const controls = useAnimationControls();
@@ -69,13 +71,16 @@ const ProjectsLayout = () => {
         <div className="w-full overflow-hidden">
           <motion.div
             animate={controls}
-            className={`flex gap-12 w-fit ${newProjectData.length > 3 ? "relative -left-140" : ""}`}
+            className={`flex gap-12 w-fit ${newProjectData.length > 3 ? "relative -left-141" : ""}`}
           >
             {newProjectData.map((data: ProjectData) => (
               <div key={data.id} className="flex flex-col gap-8 w-129">
-                <div className="w-full h-88 cursor-pointer">
+                <div
+                  className="w-full h-88 cursor-pointer"
+                  onClick={() => navigate(`/project/${data.id.slice(7)}`)}
+                >
                   <ProjectThum
-                    thumbnail={data.thumbnail}
+                    thumbnail={data.thumbnail_small}
                     scale={data.scale}
                     toolId={data.toolId}
                   />
@@ -85,7 +90,7 @@ const ProjectsLayout = () => {
                     <span className="text-4xl font-medium">{data.name}</span>
                     <span className="font-light">{data.date}</span>
                   </div>
-                  <span className="font-light">{data.description}</span>
+                  <span className="font-light">{data.overview}</span>
                 </div>
               </div>
             ))}
