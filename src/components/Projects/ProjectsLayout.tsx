@@ -28,11 +28,22 @@ const ProjectsLayout = () => {
   const dataSlideFuc = async (num: number) => {
     let slideProject = newProjectData;
     if (slideProject.length < 4) return;
+
+    await controls.start({
+      x: -560 * num,
+      transition: { duration: 0.2 },
+    });
+
     const updatedItems =
       num === 1
         ? [...slideProject.slice(1), slideProject[0]]
-        : [slideProject[slideProject.length - 1], ...slideProject.slice(-1)];
+        : [
+            slideProject[slideProject.length - 1],
+            ...slideProject.slice(0, slideProject.length - 1),
+          ];
     setNewProjectData(updatedItems);
+
+    controls.set({ x: 0 });
   };
 
   return (
@@ -56,7 +67,10 @@ const ProjectsLayout = () => {
       </div>
       <div className="w-full relative">
         <div className="w-full overflow-hidden">
-          <div className="flex gap-12 w-fit">
+          <motion.div
+            animate={controls}
+            className={`flex gap-12 w-fit ${newProjectData.length > 3 ? "relative -left-140" : ""}`}
+          >
             {newProjectData.map((data: ProjectData) => (
               <div key={data.id} className="flex flex-col gap-8 w-129">
                 <div className="w-full h-88 cursor-pointer">
@@ -75,7 +89,7 @@ const ProjectsLayout = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
         {newProjectData.length > 3 ? (
           <div className="w-full h-10 flex justify-between">
