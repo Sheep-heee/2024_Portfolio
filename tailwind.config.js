@@ -86,6 +86,7 @@ export default {
         149: "37rem",
       },
       spacing: {
+        0.5: "0.125rem",
         34: "8.5rem",
       },
       flexGrow: {
@@ -111,9 +112,6 @@ export default {
           position: "absolute",
           top: "484px",
           right: "0",
-        },
-        ".projectSlideArrow": {
-          width: "calc(100% + 40px)",
         },
         ".perspective-1000": {
           perspective: "1000px",

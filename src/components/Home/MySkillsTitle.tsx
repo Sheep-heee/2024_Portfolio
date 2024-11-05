@@ -28,7 +28,7 @@ const MySkillsTitle = () => {
       }
     };
     loopAnimation();
-  }, [controls]);
+  }, []);
 
   return (
     <motion.div
