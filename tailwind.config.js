@@ -114,6 +114,16 @@ export default {
           top: "484px",
           right: "0",
         },
+        ".experienceTitle": {
+          width: "fit-content",
+          fontSize: "1.75rem",
+          fontFamily: "Nunito Sans, sans-serif",
+          fontWeight: "800",
+          padding: "0.375rem 1.75rem",
+          borderRadius: "2rem",
+          border: "1px solid #333333",
+          textTransform: "uppercase",
+        },
         ".perspective-1000": {
           perspective: "1000px",
         },
@@ -125,7 +135,6 @@ export default {
           width: "100%",
           height: "100%",
           borderRadius: "50%",
-          background: "#F7F7F8",
         },
         ".circleBorder": {
           border: "1px solid #333333",

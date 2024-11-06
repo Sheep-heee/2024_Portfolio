@@ -29,7 +29,7 @@ const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
   return (
     <div className="w-full h-full flex flex-col justify-between rounded-2xl overflow-hidden p-6 relative">
       <img
-        className="w-full h-full object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0"
+        className="w-full h-full object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0 transition-transform duration-300 hover:scale-110"
         src={thumbnail}
         alt="project thumnail"
       />

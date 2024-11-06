@@ -56,3 +56,38 @@ export interface ProjectData {
   toolId: number[];
   projectDetail: ProjectDataDetail;
 }
+
+export interface CareerList {
+  listId: number;
+  date: string;
+  company: string;
+  employment: string;
+  responsibilities: string;
+}
+
+export interface EduList {
+  listId: number;
+  date: string;
+  institution: string;
+  description: string;
+}
+
+export interface CertificationsList {
+  listId: number;
+  date: string;
+  certification: string;
+  authority: string;
+}
+
+export interface StudyList {
+  listId: number;
+  date: string;
+  studyName: string;
+  members: string;
+  gitHubUrl: string;
+}
+
+export interface ExperienceList<T> {
+  type: string;
+  list: T[];
+}

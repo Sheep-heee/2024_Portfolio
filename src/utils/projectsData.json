@@ -9,7 +9,7 @@
     "category": "ORGANIZATION",
     "toolId": [3, 10, 12],
     "projectDetail": {
-      "thumbnail_big": "/img/mockup.png",
+      "thumbnail_big": "/img/mockup_big.png",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni commodi ipsam quos repellat quod perspiciatis sint tenetur nihil molestias iusto facere voluptatibus velit adipisci, aperiam voluptas neque consequuntur nemo ipsum. Maiores doloribus earum sit alias amet obcaecati distinctio, rerum et natus ipsam officiis non quam provident saepe nam similique repellendus aut! Atque possimus consequatur eius quibusdam nemo recusandae, sint amet!",
       "role": "All Page Design/Develop",
       "siteUrl": "#",
@@ -28,7 +28,7 @@
     "category": "ORGANIZATION",
     "toolId": [5, 14, 3],
     "projectDetail": {
-      "thumbnail_big": "/img/mockup.png",
+      "thumbnail_big": "/img/mockup_big.png",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quae a eius perferendis animi facere blanditiis autem accusamus necessitatibus soluta labore inventore quasi, harum accusantium officiis ab dolorem, saepe dignissimos. Quo reiciendis iure non architecto, itaque asperiores fugiat hic corporis nostrum tempora aperiam inventore in, voluptatibus illo quae sunt delectus. Veniam maxime, cumque officia pariatur corrupti aliquid eius voluptatibus recusandae!",
       "role": "Main Page Design/Develop",
       "siteUrl": "#",
@@ -47,7 +47,7 @@
     "category": "WEB APPLICATION",
     "toolId": [21, 8, 6, 10],
     "projectDetail": {
-      "thumbnail_big": "/img/mockup.png",
+      "thumbnail_big": "/img/mockup_big.png",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas delectus consequuntur, ab labore sed iusto reiciendis reprehenderit asperiores autem harum dolorum temporibus earum aspernatur dolore molestiae eum est modi. Dolore. Autem repudiandae cupiditate, quae maiores nostrum, iure eaque perferendis repellat provident in illo, obcaecati dolore. Ex deserunt corporis voluptatem, ut molestiae quas illum atque magni architecto vitae ipsa totam odio?",
       "role": "Main Page Design/Develop",
       "siteUrl": "#",
@@ -66,7 +66,7 @@
     "category": "OTHER",
     "toolId": [3, 4, 10, 8, 12],
     "projectDetail": {
-      "thumbnail_big": "/img/mockup.png",
+      "thumbnail_big": "/img/mockup_big.png",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsum perspiciatis, maiores, quidem ipsam quaerat necessitatibus, itaque vel molestiae architecto ducimus ex facilis animi possimus placeat eum dolores? Ex, ducimus. Ratione autem, cupiditate explicabo blanditiis nihil, aliquam nesciunt nemo molestiae a earum excepturi qui. Numquam, doloremque quae temporibus laudantium voluptatibus neque. Dolores consequatur tenetur reprehenderit neque! Omnis quis tempora dolores.",
       "role": "All Page Design/Develop",
       "siteUrl": "#",
@@ -85,7 +85,7 @@
     "category": "WEB APPLICATION",
     "toolId": [6, 9, 11, 14],
     "projectDetail": {
-      "thumbnail_big": "/img/mockup.png",
+      "thumbnail_big": "/img/mockup_big.png",
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, dolorum, error labore ipsa assumenda provident obcaecati et pariatur ex veritatis aperiam laborum est maxime? Vitae a inventore officia sequi maxime! Vel nihil ipsam nulla cupiditate ut sit dolore nemo voluptatum molestiae, placeat hic amet veritatis! Modi cum neque, voluptatum laboriosam inventore fugit reprehenderit. Laborum vel quam similique, incidunt qui autem.",
       "role": "All Page Design/Develop",
       "siteUrl": "#",

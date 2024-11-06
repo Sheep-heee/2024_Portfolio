@@ -240,3 +240,116 @@ export const projectTab: ProjectTab[] = [
     active: false,
   },
 ];
+
+export const experienceList = [
+  {
+    type: "careers",
+    list: [
+      {
+        listId: 0,
+        date: "2018. 05 ~ 2022. 07",
+        company: "유니토아",
+        employment: "정규",
+        responsibilities:
+          "입점 쇼핑몰 내 이벤트 랜딩 페이지 및 썸네일 등 웹 운영 디자인 작업",
+      },
+      {
+        listId: 1,
+        date: "2022. 07 ~ 2022. 11",
+        company: "씨온드림",
+        employment: "외주",
+        responsibilities:
+          "자사 쇼핑몰 내 이벤트 랜딩 페이지 등 웹 운영 디자인 작업",
+      },
+      {
+        listId: 2,
+        date: "2022. 12",
+        company: "브이랜딩",
+        employment: "외주",
+        responsibilities: "고객사 마케팅용 이미지 편집 및 디자인 작업",
+      },
+      {
+        listId: 3,
+        date: "2023. 01 ~ 2023. 12",
+        company: "에스앰에스",
+        employment: "정규",
+        responsibilities:
+          "입점 쇼핑몰 내 자사상품(신선/가공식품) 상세페이지 디자인 작업 (총 4건)",
+      },
+      {
+        listId: 4,
+        date: "2023. 08 ~ 2023. 11",
+        company: "찬수산",
+        employment: "외주",
+        responsibilities:
+          "입점 쇼핑몰 내 상품 및 주문 관리, 상세페이지 디자인 작업",
+      },
+      {
+        listId: 5,
+        date: "2024. 01 ~ 2024. 04",
+        company: "로그인사이트",
+        employment: "계약",
+        responsibilities: "병원 전문 마케팅 이미지 편집 및 디자인 작업",
+      },
+    ],
+  },
+  {
+    type: "education",
+    list: [
+      {
+        listId: 0,
+        date: "2018. 05 ~ 2022. 07",
+        institution: "수원정보과학고등학교",
+        description: "IT산업디자인과 졸업",
+      },
+      {
+        listId: 1,
+        date: "2024. 06 ~ 2024. 12",
+        institution: "이젠아카데미DX교육센터",
+        description:
+          "UXUI디자인 웹 프론트엔드 개발 부트캠프 (생성형AI 활용/피그마) 수료",
+      },
+    ],
+  },
+  {
+    type: "certifications",
+    list: [
+      {
+        listId: 0,
+        date: "2013. 07",
+        certification: "GTQ 1급 취득",
+        authority: "한국생산성본부",
+      },
+      {
+        listId: 1,
+        date: "2014. 12",
+        certification: "컴퓨터그래픽스운용기능사 취득",
+        authority: "한국산업인력공단",
+      },
+      {
+        listId: 2,
+        date: "2015. 07",
+        certification: "웹디자인기능사 취득",
+        authority: "한국산업인력공단",
+      },
+      {
+        listId: 3,
+        date: "2015. 07",
+        certification: "컴퓨터활용능력 2급 취득",
+        authority: "대한상공회의소",
+      },
+    ],
+  },
+  {
+    type: "study",
+    list: [
+      {
+        listId: 0,
+        date: "2024. 09 ~",
+        studyName: "JAVASCRIPT STUDY",
+        members: "인원: 12명",
+        gitHubUrl: "https://github.com/Sheep-heee/FED_javascriptSTUDY",
+      },
+    ],
+  },
+];
