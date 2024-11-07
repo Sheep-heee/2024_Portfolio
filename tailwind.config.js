@@ -25,6 +25,9 @@ export default {
       letterSpacing: {
         titleSpacing: "-0.03em",
       },
+      lineHeight: {
+        7.5: "30px",
+      },
       borderWidth: {
         3: "3px",
       },
@@ -96,6 +99,7 @@ export default {
       },
       spacing: {
         0.5: "0.125rem",
+        3.5: "0.875rem",
         34: "8.5rem",
       },
       flexGrow: {
