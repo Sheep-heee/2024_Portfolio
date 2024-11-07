@@ -12,6 +12,8 @@ import SkillItem from "../components/Home/SkillItem";
 import { skillsData } from "../utils/utils";
 import ProjectsLayout from "../components/Projects/ProjectsLayout";
 import Experience from "../components/Home/Experience";
+import ContactSlide from "../components/Home/ContactSlide";
+import ContactCard from "../components/Home/ContactCard";
 
 const Home = () => {
   return (
@@ -155,6 +157,14 @@ const Home = () => {
       </section>
       <section id="experience" className="w-full h-auto px-32 py-52">
         <Experience />
+      </section>
+      <section id="contact" className="w-full h-auto">
+        <div className="w-full h-screen relative">
+          <div className="w-fit h-fit">
+            <ContactSlide />
+          </div>
+          <ContactCard />
+        </div>
       </section>
     </>
   );

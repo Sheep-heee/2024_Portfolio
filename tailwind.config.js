@@ -25,6 +25,9 @@ export default {
       letterSpacing: {
         titleSpacing: "-0.03em",
       },
+      borderWidth: {
+        3: "3px",
+      },
       keyframes: {
         sphereRotateY: {
           "0%": { transform: "rotateY(0deg)" },
@@ -63,13 +66,17 @@ export default {
         108: "27rem",
         128: "32rem",
         129: "32.25rem",
+        145: "36.25rem",
+        165: "41.25rem",
         284: "71rem",
         308: "77rem",
         400: "100rem",
       },
       height: {
         0.75: "0.2rem",
+        76: "19rem",
         88: "22rem",
+        110: "27.5rem",
         120: "30rem",
         168: "42rem",
         200: "50rem",
@@ -77,6 +84,7 @@ export default {
         308: "77rem",
         336: "84rem",
         400: "100rem",
+        "11/12": "91.666667%",
       },
       inset: {
         8.5: "2.15rem",
@@ -94,6 +102,9 @@ export default {
         2: "2",
         3: "3",
         4: "4",
+      },
+      rotate: {
+        135: "135deg",
       },
     },
   },

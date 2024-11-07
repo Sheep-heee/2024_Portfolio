@@ -48,7 +48,7 @@ const SkillItem = ({ skillId, skillName, description, stacks }: SkillsData) => {
           </div>
         </div>
         <div
-          className={`${descOpen ? "-rotate-90" : "rotate-0"} transition-transform`}
+          className={`w-8 h-8 ${descOpen ? "-rotate-90" : "rotate-0"} transition-transform`}
         >
           <ShortArrow />
         </div>
