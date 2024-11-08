@@ -13,7 +13,7 @@ const ContactSlide = () => {
           <div className="w-full h-full rounded-2xl border border-blue overflow-hidden relative">
             <img
               className="object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              src="/img/pattern_blue.png"
+              src="/img/pattern_blue_first.png"
               alt="contact pattern blue"
             />
           </div>

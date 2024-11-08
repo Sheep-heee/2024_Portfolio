@@ -1,4 +1,5 @@
 import plugin from "tailwindcss/plugin";
+import { transform } from "typescript";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -145,6 +146,21 @@ export default {
         ".preserve-3d": {
           transformStyle: "preserve-3d",
         },
+        ".backface-hidden": {
+          backfaceVisibility: "hidden",
+        },
+        ".rotate-y-0": {
+          transform: "rotateY(0deg)",
+        },
+        ".rotate-y-180": {
+          transform: "rotateY(180deg)",
+        },
+        ".card_front": {
+          transform: "translateZ(1px)",
+        },
+        ".card_back": {
+          transform: "rotateY(180deg) translateZ(-1px)",
+        },
         ".circle": {
           position: "absolute",
           width: "100%",
@@ -195,6 +211,9 @@ export default {
         },
         ".rotate3d-y-150": {
           transform: "rotate3d(0, 1, 0, 150deg)",
+        },
+        ".rotate3d-y-180": {
+          transform: "rotate3d(0, 1, 0, 180deg)",
         },
         ".rotate3d-z-0": {
           transform: "rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 0deg)",

@@ -20,7 +20,7 @@ const ContactCard = () => {
   };
 
   return (
-    <div className="w-11/12 h-11/12 rounded-3xl bg-lightGrey p-24 absolute top-0 left-1/2 -translate-x-1/2">
+    <div className="w-full h-full rounded-3xl bg-lightGrey p-24 rotate-y-180">
       <div className="h-full flex gap-20 font-nunitoSans">
         <div className="grow h-full flex flex-col justify-between">
           <div className="flex flex-col">
@@ -107,7 +107,7 @@ const ContactCard = () => {
                   <div className="w-6 h-6">
                     <LinkedInIcon />
                   </div>
-                  <span className="font-medium text-2xl leading-none">
+                  <span className="font-medium text-xl leading-none">
                     LinkedIn
                   </span>
                   <div className="w-6 h-6">
@@ -123,7 +123,7 @@ const ContactCard = () => {
                   <div className="w-6 h-6">
                     <TwitterXIcon />
                   </div>
-                  <span className="font-medium text-2xl leading-none">
+                  <span className="font-medium text-xl leading-none">
                     X (Twitter)
                   </span>
                   <div className="w-6 h-6">
@@ -141,7 +141,7 @@ const ContactCard = () => {
                   <div className="w-6 h-6">
                     <ThreadsIcon />
                   </div>
-                  <span className="font-medium text-2xl leading-none">
+                  <span className="font-medium text-xl leading-none">
                     Threads
                   </span>
                   <div className="w-6 h-6">

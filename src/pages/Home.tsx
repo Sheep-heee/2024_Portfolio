@@ -13,7 +13,7 @@ import { skillsData } from "../utils/utils";
 import ProjectsLayout from "../components/Projects/ProjectsLayout";
 import Experience from "../components/Home/Experience";
 import ContactSlide from "../components/Home/ContactSlide";
-import ContactCard from "../components/Home/ContactCard";
+import FlipSlide from "../components/Home/FlipSlide";
 
 const Home = () => {
   return (
@@ -163,7 +163,9 @@ const Home = () => {
           <div className="w-fit h-fit">
             <ContactSlide />
           </div>
-          <ContactCard />
+          <div className={`w-full h-full absolute top-0`}>
+            <FlipSlide />
+          </div>
         </div>
       </section>
     </>
