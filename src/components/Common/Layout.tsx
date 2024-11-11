@@ -8,7 +8,7 @@ const Layout = () => {
       <header className="w-full px-8 h-24 fixed top-0 z-20 flex items-center justify-center">
         <Header />
       </header>
-      <main className="z-10">
+      <main className="z-10 h-[7491px]">
         <Outlet />
       </main>
       <footer className="z-0">

@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 import Sphere from "../assets/Sphere";
 import BirthdayCake from "../assets/icon/ui_icon/BirthdayCake";
 import SmartphoneIcon from "../assets/icon/ui_icon/SmartphoneIcon";
@@ -14,8 +16,44 @@ import ProjectsLayout from "../components/Projects/ProjectsLayout";
 import Experience from "../components/Home/Experience";
 import ContactSlide from "../components/Home/ContactSlide";
 import FlipSlide from "../components/Home/FlipSlide";
+import { RootState } from "../redux/reducers";
 
 const Home = () => {
+  const contactRef = useRef<HTMLDivElement>(null);
+  const contactImageRef = useRef<HTMLDivElement>(null);
+  const scrollY = useSelector((state: RootState) => state.scrollY.scrollY);
+  const filpOpen = useSelector((state: RootState) => state.filpOpen.filpOpen);
+
+  const contactTop = -(
+    (contactRef.current !== null && contactImageRef.current !== null
+      ? contactRef.current.offsetHeight - contactImageRef.current.offsetHeight
+      : 0) / 2
+  );
+
+  const [contactTopValue, setContactTopValue] = useState(contactTop);
+  const [contactLeftValue, setContactLeftValue] = useState(-100);
+
+  const handleScroll = () => {
+    if (scrollY <= 4602) return;
+    if (scrollY >= 5580) return;
+
+    const ratio = (scrollY - 4602) / (5580 - 4602);
+    setContactTopValue(contactTop + ratio * (0 - contactTop));
+  };
+
+  const handleScrollLeft = () => {
+    if (scrollY <= 4602) return;
+
+    const ratio = (scrollY - 4602) / (5580 - 4602);
+    setContactLeftValue(scrollY < 5580 ? -100 + ratio * (0 - -100) : 0);
+  };
+
+  useEffect(() => {
+    handleScroll();
+    handleScrollLeft();
+    console.log(scrollY);
+  }, [scrollY]);
+
   return (
     <>
       <section id="main" className="relative pt-24 z-10">
@@ -155,16 +193,34 @@ const Home = () => {
       >
         <ProjectsLayout />
       </section>
-      <section id="experience" className="w-full h-auto px-32 py-52">
+      <section id="experience" className="w-full h-auto px-32 pt-52 pb-24">
         <Experience />
       </section>
-      <section id="contact" className="w-full h-auto">
-        <div className="w-full h-screen relative">
-          <div className="w-fit h-fit">
+      <section id="contact" className="w-full h-auto relative">
+        <div
+          ref={contactRef}
+          className={`w-full h-screen flex items-center ${scrollY >= 5508 && contactTopValue <= 0 && contactTopValue > contactTop ? "fixed" : "relative"}`}
+          style={{ top: `${contactTopValue}px` }}
+        >
+          {scrollY >= 5580 ? (
+            <div
+              className={`w-full h-full absolute z-10 perspective-2000 flex items-center justify-center ${scrollY <= 6596 && filpOpen === false ? "opacity-100" : "opacity-0"} ${
+                scrollY <= 6596 && filpOpen === true
+                  ? setTimeout(() => {
+                      return "opacity-0";
+                    }, 500)
+                  : "opacity-0"
+              }`}
+            >
+              <FlipSlide />
+            </div>
+          ) : null}
+          <div
+            ref={contactImageRef}
+            className="w-fit h-fit relative"
+            style={{ left: `${contactLeftValue}%` }}
+          >
             <ContactSlide />
-          </div>
-          <div className={`w-full h-full absolute top-0`}>
-            <FlipSlide />
           </div>
         </div>
       </section>

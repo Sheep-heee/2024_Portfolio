@@ -20,7 +20,7 @@ const ContactCard = () => {
   };
 
   return (
-    <div className="w-full h-full rounded-3xl bg-lightGrey p-24 rotate-y-180">
+    <div className="w-full h-full rounded-3xl bg-lightGrey p-24">
       <div className="h-full flex gap-20 font-nunitoSans">
         <div className="grow h-full flex flex-col justify-between">
           <div className="flex flex-col">

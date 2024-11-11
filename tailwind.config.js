@@ -143,6 +143,9 @@ export default {
         ".perspective-1000": {
           perspective: "1000px",
         },
+        ".perspective-2000": {
+          perspective: "2000px",
+        },
         ".preserve-3d": {
           transformStyle: "preserve-3d",
         },
