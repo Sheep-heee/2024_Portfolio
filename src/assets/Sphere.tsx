@@ -13,6 +13,8 @@ const animationPick = (area: string): string => {
       return "animate-sphereHome2";
     case "home3":
       return "animate-sphereHome3";
+    case "footer":
+      return "animate-sphereY";
     default:
       return "";
   }
@@ -26,69 +28,69 @@ const Sphere = ({ area, color }: Props) => {
       >
         {/* X Axis */}
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-x-0`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-x-0`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-x-25`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-x-25`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-x-50`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-x-50`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-x-75`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-x-75`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-x-100`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-x-100`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-x-125`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-x-125`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-x-150`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-x-150`}
         ></div>
         {/* Y Axis */}
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-y-0`}
+          className={`circle${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-0`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-y-25`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-25`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-y-50`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-50`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-y-75`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-75`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-y-100`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-100`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-y-125`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-125`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? "bg-blue" : " bg-bgGrey"} circleBorder rotate3d-y-150`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-150`}
         ></div>
         {/* Z Axis */}
         <div
-          className={`circle ${color === "blue" ? " bg-blue" : "bg-bgGrey"} rotate3d-z-0`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} rotate3d-z-0`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? " bg-blue" : "bg-bgGrey"} rotate3d-z-25`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} rotate3d-z-25`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? " bg-blue" : "bg-bgGrey"} rotate3d-z-50`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} rotate3d-z-50`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? " bg-blue" : "bg-bgGrey"} rotate3d-z-75`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} rotate3d-z-75`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? " bg-blue" : "bg-bgGrey"} rotate3d-z-100`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} rotate3d-z-100`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? " bg-blue" : "bg-bgGrey"} rotate3d-z-125`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} rotate3d-z-125`}
         ></div>
         <div
-          className={`circle ${color === "blue" ? " bg-blue" : "bg-bgGrey"} rotate3d-z-150`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} rotate3d-z-150`}
         ></div>
       </div>
     </div>

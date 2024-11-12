@@ -41,7 +41,7 @@ const FlipSlide = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (scrollY < 6399 && filpOpen === true) {
+      if (scrollY < 6596 && filpOpen === true) {
         dispatch(updateFilp(false));
       }
     };

@@ -173,6 +173,9 @@ export default {
         ".circleBorder": {
           border: "1px solid #333333",
         },
+        ".circleBorderFooter": {
+          border: "1px solid #ffffff",
+        },
         ".rotate3d-x-0": {
           transform: "rotate3d(1, 0, 0, 0deg)",
         },

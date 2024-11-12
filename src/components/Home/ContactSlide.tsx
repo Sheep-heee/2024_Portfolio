@@ -4,7 +4,6 @@ import { RootState } from "../../redux/reducers";
 
 const ContactSlide = () => {
   const scrollY = useSelector((state: RootState) => state.scrollY.scrollY);
-  const filpOpen = useSelector((state: RootState) => state.filpOpen.filpOpen);
 
   const [width, setWidth] = useState(31.11);
   const [height, setHeight] = useState(100);
@@ -48,7 +47,7 @@ const ContactSlide = () => {
       </div>
       {scrollY > 5580 ? (
         <div
-          className={`rounded-3xl p-4 border-3 border-grey bg-lightGrey absolute ${scrollY >= 6596 ? "opacity-0" : "opacity-100"} `}
+          className={`rounded-3xl p-4 border-3 border-grey bg-lightGrey absolute ${scrollY >= 6400 ? "opacity-0" : "opacity-100"} `}
           style={{ width: `${width}%`, height: `${height}%` }}
         >
           <div className="w-full h-full rounded-2xl border border-blue overflow-hidden relative">

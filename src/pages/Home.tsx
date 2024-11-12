@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import Sphere from "../assets/Sphere";
 import BirthdayCake from "../assets/icon/ui_icon/BirthdayCake";
-import SmartphoneIcon from "../assets/icon/ui_icon/SmartphoneIcon";
 import EmailIcon from "../assets/icon/ui_icon/EmailIcon";
 import CodeTag from "../assets/icon/dev_icon/CodeTag";
 import Arrow from "../assets/Arrow";
@@ -22,7 +21,6 @@ const Home = () => {
   const contactRef = useRef<HTMLDivElement>(null);
   const contactImageRef = useRef<HTMLDivElement>(null);
   const scrollY = useSelector((state: RootState) => state.scrollY.scrollY);
-  const filpOpen = useSelector((state: RootState) => state.filpOpen.filpOpen);
 
   const contactTop = -(
     (contactRef.current !== null && contactImageRef.current !== null
@@ -137,12 +135,6 @@ const Home = () => {
                 1997. 06. 09
               </div>
               <div className="text-white text-xl font-light flex items-center gap-2">
-                <div className="w-3 h-3 flex items-center justify-center">
-                  <SmartphoneIcon />
-                </div>
-                010-6429-9645
-              </div>
-              <div className="text-white text-xl font-light flex items-center gap-2">
                 <div className="w-5 h-5 flex items-center justify-center">
                   <EmailIcon />
                 </div>
@@ -199,11 +191,11 @@ const Home = () => {
       <section id="contact" className="w-full h-auto relative">
         <div
           ref={contactRef}
-          className={`w-full h-screen flex items-center top-0 ${scrollY >= 5508 && contactTopValue <= 0 && contactTopValue > contactTop ? "fixed" : "relative"}`}
+          className={`w-full h-screen flex items-center ${scrollY >= 5508 && 6712 >= scrollY && contactTopValue <= 0 && contactTopValue > contactTop ? "fixed top-0" : "relative top-0"} ${scrollY > 6712 && "fixed top-[1250px]"}`}
         >
-          {scrollY >= 5580 ? (
+          {scrollY >= 6200 ? (
             <div
-              className={`w-full h-full absolute z-10 perspective-2000 flex items-center justify-center transti ${scrollY >= 6596 ? "opacity-100" : "opacity-0"}`}
+              className={`w-full h-full absolute z-10 perspective-2000 flex items-center justify-center ${scrollY >= 6400 ? "opacity-100" : "opacity-0"}`}
             >
               <FlipSlide />
             </div>

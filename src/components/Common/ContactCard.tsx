@@ -2,7 +2,7 @@ import { GitHubIcon, NotionIcon } from "../../assets/icon/dev_icon/ToolsIcon";
 import CoffeeIcon from "../../assets/icon/ui_icon/CoffeeIcon";
 import EmailIcon from "../../assets/icon/ui_icon/EmailIcon";
 import ShortArrow from "../../assets/icon/ui_icon/ShortArrow";
-import SmartphoneIcon from "../../assets/icon/ui_icon/SmartphoneIcon";
+import KakaoIcon from "../../assets/icon/ui_icon/KakaoIcon";
 import {
   LinkedInIcon,
   TwitterXIcon,
@@ -14,6 +14,15 @@ const ContactCard = () => {
     try {
       await navigator.clipboard.writeText("sheephi0609@gmail.com");
       alert("이메일이 복사되었습니다!");
+    } catch (err) {
+      alert(err);
+    }
+  };
+
+  const kakaoCopy = async () => {
+    try {
+      await navigator.clipboard.writeText("senna123");
+      alert("카카오톡ID가 복사되었습니다!");
     } catch (err) {
       alert(err);
     }
@@ -44,11 +53,15 @@ const ContactCard = () => {
             </div>
             <div className="w-fit flex gap-3 items-center pt-5 pb-3 border-b-3 border-mainBlack">
               <div className="w-14 h-14 flex justify-center">
-                <div className="w-8 h-full">
-                  <SmartphoneIcon fill={"mainBlack"} />
-                </div>
+                <KakaoIcon />
               </div>
-              <div className="font-medium text-6xl">010-6429-9645</div>
+              <div className="font-medium text-6xl">senna123</div>
+              <button
+                className="px-4 py-2 bg-grey rounded-lg font-pretendard text-xl"
+                onClick={kakaoCopy}
+              >
+                복사
+              </button>
             </div>
             <div></div>
           </div>
