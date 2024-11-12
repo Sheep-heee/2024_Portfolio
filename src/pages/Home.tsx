@@ -199,18 +199,11 @@ const Home = () => {
       <section id="contact" className="w-full h-auto relative">
         <div
           ref={contactRef}
-          className={`w-full h-screen flex items-center ${scrollY >= 5508 && contactTopValue <= 0 && contactTopValue > contactTop ? "fixed" : "relative"}`}
-          style={{ top: `${contactTopValue}px` }}
+          className={`w-full h-screen flex items-center top-0 ${scrollY >= 5508 && contactTopValue <= 0 && contactTopValue > contactTop ? "fixed" : "relative"}`}
         >
           {scrollY >= 5580 ? (
             <div
-              className={`w-full h-full absolute z-10 perspective-2000 flex items-center justify-center ${scrollY <= 6596 && filpOpen === false ? "opacity-100" : "opacity-0"} ${
-                scrollY <= 6596 && filpOpen === true
-                  ? setTimeout(() => {
-                      return "opacity-0";
-                    }, 500)
-                  : "opacity-0"
-              }`}
+              className={`w-full h-full absolute z-10 perspective-2000 flex items-center justify-center transti ${scrollY >= 6596 ? "opacity-100" : "opacity-0"}`}
             >
               <FlipSlide />
             </div>

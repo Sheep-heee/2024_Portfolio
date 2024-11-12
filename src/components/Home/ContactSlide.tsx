@@ -23,7 +23,7 @@ const ContactSlide = () => {
   }, [scrollY]);
 
   return (
-    <div className="w-full h-full flex gap-10 items-center justify-center">
+    <div className="w-full h-full flex gap-10 items-center justify-center px-5">
       <div className="grow h-96 overflow-hidden rounded-3xl">
         <img
           className="w-full h-full object-cover"
