@@ -53,8 +53,8 @@ const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
             />
           ))}
         {toolId.length > 2 ? (
-          <div className="font-bold text-xl leading-none py-2 px-3 bg-white rounded-xl text-darkGrey">
-            +
+          <div className="font-bold text-xl leading-none py-2 px-3 rounded-xl bg-white text-mainBlack">
+            +{toolId.length - 2}
           </div>
         ) : null}
       </div>

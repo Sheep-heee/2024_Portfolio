@@ -29,6 +29,10 @@ export interface Divide {
   [key: number]: Stack[];
 }
 
+export interface ProjectToolDivide {
+  [key: number]: number[];
+}
+
 export interface ProjectTab {
   id: number;
   name: string;
