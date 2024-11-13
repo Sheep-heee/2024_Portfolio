@@ -32,22 +32,22 @@ export const mainMenuPC: MenuItem[] = [
   {
     id: 0,
     name: "ABOUT ME",
-    hashLink: "#",
+    hashLink: "/#aboutme",
   },
   {
     id: 1,
     name: "SKILLS",
-    hashLink: "#",
+    hashLink: "/#myskills",
   },
   {
     id: 2,
     name: "PROJECTS",
-    hashLink: "#",
+    hashLink: "/#projects",
   },
   {
     id: 3,
     name: "EXPERIENCES",
-    hashLink: "#",
+    hashLink: "/#experience",
   },
 ];
 

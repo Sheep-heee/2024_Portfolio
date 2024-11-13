@@ -1,5 +1,4 @@
 import plugin from "tailwindcss/plugin";
-import { transform } from "typescript";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -110,6 +109,9 @@ export default {
       },
       rotate: {
         135: "135deg",
+      },
+      boxShadow: {
+        borderBottom: "0 1px 0 rgb(51, 51, 51)",
       },
     },
   },

@@ -49,11 +49,10 @@ const Home = () => {
   useEffect(() => {
     handleScroll();
     handleScrollLeft();
-    console.log(scrollY);
   }, [scrollY]);
 
   return (
-    <>
+    <div className="h-[7491px]">
       <section id="main" className="relative pt-24 z-10">
         <Arrow section={"main"} />
         <motion.div
@@ -209,7 +208,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

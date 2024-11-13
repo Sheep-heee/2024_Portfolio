@@ -50,7 +50,7 @@ const Sphere = ({ area, color }: Props) => {
         ></div>
         {/* Y Axis */}
         <div
-          className={`circle${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-0`}
+          className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-0`}
         ></div>
         <div
           className={`circle ${color === "blue" ? "bg-blue" : area === "footer" ? "bg-mainBlack" : "bg-bgGrey"} ${area === "footer" ? "circleBorderFooter" : "circleBorder"} rotate3d-y-25`}
