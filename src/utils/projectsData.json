@@ -15,7 +15,9 @@
       "siteUrl": "#",
       "gitHubUrl": "#",
       "notionUrl": "#",
-      "previewImg": [".gif", ".gif", ".gif"]
+      "previewImg": [".gif", ".gif", ".gif"],
+      "previewTitle": ["프리뷰 내용", "프리뷰 내용", "프리뷰 내용"],
+      "previewDesc": ["프리뷰 설명", "프리뷰 설명", "프리뷰 설명"]
     }
   },
   {
@@ -34,7 +36,9 @@
       "siteUrl": "#",
       "gitHubUrl": "#",
       "notionUrl": "#",
-      "previewImg": [".gif", ".gif", ".gif"]
+      "previewImg": [".gif", ".gif", ".gif"],
+      "previewTitle": ["프리뷰 내용", "프리뷰 내용", "프리뷰 내용"],
+      "previewDesc": ["프리뷰 설명", "프리뷰 설명", "프리뷰 설명"]
     }
   },
   {
@@ -53,7 +57,9 @@
       "siteUrl": "#",
       "gitHubUrl": "#",
       "notionUrl": "#",
-      "previewImg": [".gif", ".gif", ".gif"]
+      "previewImg": [".gif", ".gif", ".gif"],
+      "previewTitle": ["프리뷰 내용", "프리뷰 내용", "프리뷰 내용"],
+      "previewDesc": ["프리뷰 설명", "프리뷰 설명", "프리뷰 설명"]
     }
   },
   {
@@ -72,7 +78,9 @@
       "siteUrl": "#",
       "gitHubUrl": "#",
       "notionUrl": "#",
-      "previewImg": [".gif", ".gif", ".gif"]
+      "previewImg": [".gif", ".gif", ".gif"],
+      "previewTitle": ["프리뷰 내용", "프리뷰 내용", "프리뷰 내용"],
+      "previewDesc": ["프리뷰 설명", "프리뷰 설명", "프리뷰 설명"]
     }
   },
   {
@@ -91,7 +99,9 @@
       "siteUrl": "#",
       "gitHubUrl": "#",
       "notionUrl": "#",
-      "previewImg": [".gif", ".gif", ".gif"]
+      "previewImg": [".gif", ".gif", ".gif"],
+      "previewTitle": ["프리뷰 내용", "프리뷰 내용", "프리뷰 내용"],
+      "previewDesc": ["프리뷰 설명", "프리뷰 설명", "프리뷰 설명"]
     }
   }
 ]

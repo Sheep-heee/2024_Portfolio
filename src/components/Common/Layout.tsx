@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { RootState } from "../../redux/reducers";
@@ -12,6 +12,7 @@ const Layout = () => {
   const scrollY = useSelector((state: RootState) => state.scrollY.scrollY);
   const [isVisible, setIsVisible] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
+  const { pathname } = useLocation();
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const Layout = () => {
   return (
     <>
       <header
-        className={`w-full px-8 h-24 fixed transition-all duration-300 ${isVisible ? "top-0 opacity-100" : "-top-24 opacity-0"} z-20 flex items-center justify-center ${scrollY > 1134 ? "bg-bgGrey shadow-borderBottom" : ""}`}
+        className={`w-full px-8 h-24 fixed transition-all duration-300 ${isVisible ? "top-0 opacity-100" : "-top-24 opacity-0"} z-20 flex items-center justify-center ${scrollY > 1134 && pathname === "/" ? "bg-bgGrey shadow-borderBottom" : scrollY < 1134 && pathname === "/" ? "" : "bg-bgGrey"}`}
       >
         <Header modal={setModalOpen} />
       </header>

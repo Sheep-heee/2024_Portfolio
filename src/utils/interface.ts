@@ -47,6 +47,8 @@ export interface ProjectDataDetail {
   gitHubUrl: string;
   notionUrl: string;
   previewImg: string[];
+  previewTitle: string[];
+  previewDesc: string[];
 }
 
 export interface ProjectData {

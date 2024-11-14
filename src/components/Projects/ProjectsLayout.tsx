@@ -77,7 +77,11 @@ const ProjectsLayout = () => {
               <div key={data.id} className="flex flex-col gap-8 w-129">
                 <div
                   className="w-full h-88 cursor-pointer"
-                  onClick={() => navigate(`/project/${data.id.slice(7)}`)}
+                  onClick={() =>
+                    navigate(`/project/${data.id.slice(7)}`, {
+                      state: { fromHome: true },
+                    })
+                  }
                 >
                   <ProjectThum
                     thumbnail={data.thumbnail_small}

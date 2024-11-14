@@ -11,7 +11,9 @@ interface ProjectThumProps {
 
 const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
   const [toolsWidth, setToolsWidth] = useState(0);
+  const [thumWidth, setThumWidth] = useState(468);
   const toolsArea = useRef<HTMLDivElement>(null);
+  const thumArea = useRef<HTMLDivElement>(null);
   const stackList: Stack[] = [];
 
   (() => {
@@ -21,13 +23,19 @@ const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
   })();
 
   useEffect(() => {
+    setThumWidth(
+      thumArea.current !== null ? thumArea.current.clientWidth : 468
+    );
     setToolsWidth(
       toolsArea.current !== null ? toolsArea.current.clientWidth : 0
     );
   }, []);
 
   return (
-    <div className="w-full h-full flex flex-col justify-between rounded-2xl overflow-hidden p-6 relative">
+    <div
+      ref={thumArea}
+      className="w-full h-full flex flex-col justify-between rounded-2xl overflow-hidden p-6 relative"
+    >
       <img
         className="w-full h-full object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0 transition-transform duration-300 hover:scale-110"
         src={thumbnail}
@@ -43,7 +51,7 @@ const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
         className="w-fit flex gap-2 items-center z-10 text-mainBlack text-nowrap"
       >
         {toolId
-          .slice(0, toolsWidth > 468 ? 1 : 2)
+          .slice(0, toolsWidth > thumWidth - 48 ? 1 : 2)
           .map((item: number, index) => (
             <ToolItem
               key={index}
