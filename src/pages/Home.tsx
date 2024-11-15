@@ -56,47 +56,53 @@ const Home = () => {
       <section id="main" className="relative pt-24 z-10">
         <Arrow section={"main"} />
         <motion.div
-          className="w-96 h-96 absolute top-38 -right-20 rounded-full circleBorder overflow-hidden"
+          className="w-96 h-96 absolute top-38 -right-20 rounded-full circleBorder overflow-hidden bg-bgGrey max-[856px]:hidden"
           transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.05 }}
         >
           <Sphere area={"home1"} />
         </motion.div>
         <motion.div
-          className="w-80 h-80 absolute top-149 right-96 rounded-full circleBorder overflow-hidden bg-bgGrey"
+          className="w-80 h-80 absolute top-149 right-96 rounded-full circleBorder overflow-hidden bg-bgGrey max-[856px]:hidden"
           transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.05 }}
         >
           <Sphere area={"home2"} />
         </motion.div>
         <motion.div
-          className="w-44 h-44 absolute top-120 right-40"
+          className="w-44 h-44 absolute top-120 right-40 max-[856px]:hidden"
           transition={{ duration: 0.5 }}
           whileHover={{ scale: 1.1 }}
         >
-          <div className="w-full h-full rounded-full circleBorder overflow-hidden animate-sphereBounce3 hover:scale-110">
+          <div className="w-full h-full rounded-full circleBorder overflow-hidden animate-sphereBounce3 bg-bgGrey hover:scale-110">
             <Sphere area={"home3"} />
           </div>
         </motion.div>
-        <div className="px-24 h-168 flex flex-col justify-between mb-12">
-          <div className="font-nunitoSans flex flex-col">
-            <div className="text-title font-bold leading-none tracking-titleSpacing flex items-center gap-5 mt-20">
-              <h1>PORTFOLIO</h1>
-              <CodeTag />
-            </div>
-            <div className="flex gap-2">
-              <div className="text-7xl font-light tracking-titleSpacing">
-                Crafting Experiences
+        <div className="px-24 h-168 flex flex-col justify-between mb-12 max-[1221px]:justify-normal">
+          <div className="font-nunitoSans flex flex-col max-[856px]:flex-col-reverse max-[856px]:items-center max-[856px]:mt-20">
+            <div className="font-bold flex items-center gap-5 mt-20 max-[856px]:gap-2 max-[856px]:mt-0">
+              <h1 className="leading-none tracking-titleSpacing text-title max-[1669px]:text-9xl max-[1221px]:text-7xl max-[856px]:text-5xl">
+                PORTFOLIO
+              </h1>
+              <div className="w-48 max-[1669px]:w-28 max-[1221px]:w-20 max-[856px]:w-14">
+                <CodeTag />
               </div>
             </div>
+            <div className="text-7xl font-light tracking-titleSpacing max-[1669px]:text-5xl max-[1221px]:text-3xl">
+              Crafting Experiences
+            </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col max-[1221px]:mt-32 max-[856px]:mt-3 max-[856px]:flex-row max-[856px]:items-center  max-[856px]:justify-center max-[856px]:gap-3">
             <div className="font-nunitoSans text-xl font-light leading-none tracking-titleSpacing">
               Frontend Developer
             </div>
-            <div className="text-3xl tracking-titleSpacing">
-              <span className="font-pretendard font-bold">양희진</span>
-              <span className="font-nunitoSans">&nbsp;YANG HEEJIN</span>
+            <div className="text-3xl tracking-titleSpacing flex items-center">
+              <span className="font-pretendard font-bold max-[856px]:text-xl">
+                양희진
+              </span>
+              <span className="font-nunitoSans max-[856px]:hidden">
+                &nbsp;YANG HEEJIN
+              </span>
             </div>
           </div>
         </div>

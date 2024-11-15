@@ -90,6 +90,7 @@ export default {
         "11/12": "91.666667%",
       },
       inset: {
+        5.5: "1.375rem",
         8.5: "2.15rem",
         38: "9.5rem",
         120: "30rem",
@@ -123,6 +124,20 @@ export default {
           height: "4.5rem",
           position: "absolute",
           top: "368px",
+          right: "0",
+        },
+        ".mainArrow1669": {
+          width: "calc(100% - 522px)",
+          height: "48px",
+          position: "absolute",
+          top: "308px",
+          right: "0",
+        },
+        ".mainArrow1221": {
+          width: "calc(100% - 370px)",
+          height: "36px",
+          position: "absolute",
+          top: "248px",
           right: "0",
         },
         ".skillArrow": {
