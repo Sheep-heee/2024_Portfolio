@@ -14,9 +14,10 @@ import { RootState } from "../../redux/reducers";
 
 interface ModalOpenSet {
   modal: (value: boolean) => void;
+  mobileMenu: (value: boolean) => void;
 }
 
-const Header = ({ modal }: ModalOpenSet) => {
+const Header = ({ modal, mobileMenu }: ModalOpenSet) => {
   const dispatch: Dispatch<ScrollYActionType> = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,8 +28,13 @@ const Header = ({ modal }: ModalOpenSet) => {
     dispatch(updateScrollY(window.scrollY));
   };
 
+  const windowWidth = () => {
+    console.log(window.innerWidth);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", windowWidth);
   }, []);
 
   return (
@@ -37,7 +43,13 @@ const Header = ({ modal }: ModalOpenSet) => {
         className={`w-full h-fit flex justify-between items-center font-nunitoSans`}
       >
         <div
-          className="w-12 h-12 rounded-full circleBorder overflow-hidden cursor-pointer"
+          className="hidden max-[675px]:block max-[675px]:cursor-pointer max-[675px]:relative"
+          onClick={() => mobileMenu(true)}
+        >
+          MENU
+        </div>
+        <div
+          className="w-12 h-12 rounded-full circleBorder overflow-hidden cursor-pointer max-[675px]:absolute max-[675px]:left-1/2 max-[675px]:-translate-x-1/2"
           onClick={() => {
             pathSegments === "project"
               ? navigate("/")
@@ -46,12 +58,12 @@ const Header = ({ modal }: ModalOpenSet) => {
         >
           <Sphere area={"header"} />
         </div>
-        <nav>
+        <nav className="max-[675px]:hidden">
           <ul className="flex gap-7">
             {mainMenuPC.map((item: MenuItem) => {
               return (
                 <li key={item.id} className="group">
-                  <HashLink smooth to={item.hashLink}>
+                  <HashLink smooth to={item.hashLink as string}>
                     {item.name}
                   </HashLink>
                   <div className="w-0 h-px bg-mainBlack transition-all group-hover:w-full"></div>
@@ -61,7 +73,7 @@ const Header = ({ modal }: ModalOpenSet) => {
           </ul>
         </nav>
         <button
-          className={`border border-mainBlack bg-bgGrey rounded-full py-1.5 px-5 transition hover:bg-mainBlack hover:text-bgGrey ${filpOpen ? "invisible" : "visible"}`}
+          className={`border border-mainBlack bg-bgGrey rounded-full py-1.5 px-5 transition hover:bg-mainBlack hover:text-bgGrey ${filpOpen ? "invisible" : "visible"} max-[675px]:p-0 max-[675px]:border-none max-[675px]:hover:bg-bgGrey max-[675px]:hover:text-mainBlack`}
           onClick={() => {
             modal(true);
           }}

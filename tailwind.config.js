@@ -142,6 +142,9 @@ export default {
           border: "1px solid #333333",
           textTransform: "uppercase",
         },
+        ".mobileMenuHeight": {
+          height: "calc(100% - 137px)",
+        },
         ".perspective-1000": {
           perspective: "1000px",
         },

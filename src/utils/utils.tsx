@@ -51,6 +51,34 @@ export const mainMenuPC: MenuItem[] = [
   },
 ];
 
+export const mainMenuMO: MenuItem[] = [
+  {
+    id: 0,
+    name: "ABOUT ME",
+    scrollTo: 0,
+  },
+  {
+    id: 1,
+    name: "SKILLS",
+    scrollTo: 0,
+  },
+  {
+    id: 2,
+    name: "PROJECTS",
+    scrollTo: 0,
+  },
+  {
+    id: 3,
+    name: "EXPERIENCES",
+    scrollTo: 0,
+  },
+  {
+    id: 4,
+    name: "CONTACT",
+    scrollTo: 0,
+  },
+];
+
 export const skillsData: SkillsData[] = [
   {
     skillId: 0,

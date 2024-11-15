@@ -1,7 +1,8 @@
 export interface MenuItem {
   id: number;
   name: string;
-  hashLink: string;
+  hashLink?: string;
+  scrollTo?: number;
 }
 
 export interface ScrollY {
