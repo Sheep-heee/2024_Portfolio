@@ -56,21 +56,21 @@ const Home = () => {
       <section id="main" className="relative pt-24 z-10">
         <Arrow section={"main"} />
         <motion.div
-          className="w-96 h-96 absolute top-38 -right-20 rounded-full circleBorder overflow-hidden bg-bgGrey max-[856px]:hidden"
+          className="w-96 h-96 absolute top-38 -right-20 rounded-full circleBorder overflow-hidden bg-bgGrey max-homeMd:w-60 max-homeMd:h-60 max-homeSm:w-28 max-homeSm:h-28 max-homeSm:top-64 max-homeSm:-right-6"
           transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.05 }}
         >
           <Sphere area={"home1"} />
         </motion.div>
         <motion.div
-          className="w-80 h-80 absolute top-149 right-96 rounded-full circleBorder overflow-hidden bg-bgGrey max-[856px]:hidden"
+          className="w-80 h-80 absolute top-149 right-96 rounded-full circleBorder overflow-hidden bg-bgGrey max-homeMd:w-52 max-homeMd:h-52 max-homeMd:top-120 max-homeMd:right-72 max-homeSm:hidden"
           transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.05 }}
         >
           <Sphere area={"home2"} />
         </motion.div>
         <motion.div
-          className="w-44 h-44 absolute top-120 right-40 max-[856px]:hidden"
+          className="w-44 h-44 absolute top-120 right-40 max-homeMd:w-32 max-homeMd:h-32 max-homeMd:top-88 max-homeMd:right-20  max-homeSm:hidden"
           transition={{ duration: 0.5 }}
           whileHover={{ scale: 1.1 }}
         >
@@ -78,29 +78,29 @@ const Home = () => {
             <Sphere area={"home3"} />
           </div>
         </motion.div>
-        <div className="px-24 h-168 flex flex-col justify-between mb-12 max-[1221px]:justify-normal">
-          <div className="font-nunitoSans flex flex-col max-[856px]:flex-col-reverse max-[856px]:items-center max-[856px]:mt-20">
-            <div className="font-bold flex items-center gap-5 mt-20 max-[856px]:gap-2 max-[856px]:mt-0">
-              <h1 className="leading-none tracking-titleSpacing text-title max-[1669px]:text-9xl max-[1221px]:text-7xl max-[856px]:text-5xl">
+        <div className="px-24 h-168 flex flex-col justify-between mb-12 max-homeMd:justify-normal max-homeMd:h-96">
+          <div className="font-nunitoSans flex flex-col max-homeSm:flex-col-reverse max-homeSm:items-center max-homeSm:mt-10">
+            <div className="font-bold flex items-center gap-5 mt-20 max-homeSm:gap-2 max-homeSm:mt-0">
+              <h1 className="leading-none tracking-titleSpacing text-title max-homeLg:text-9xl max-homeMd:text-7xl max-homeSm:text-5xl">
                 PORTFOLIO
               </h1>
-              <div className="w-48 max-[1669px]:w-28 max-[1221px]:w-20 max-[856px]:w-14">
+              <div className="w-48 max-homeLg:w-28 max-homeMd:w-20 max-homeSm:w-14">
                 <CodeTag />
               </div>
             </div>
-            <div className="text-7xl font-light tracking-titleSpacing max-[1669px]:text-5xl max-[1221px]:text-3xl">
+            <div className="text-7xl font-light tracking-titleSpacing max-homeLg:text-5xl max-homeMd:text-3xl">
               Crafting Experiences
             </div>
           </div>
-          <div className="flex flex-col max-[1221px]:mt-32 max-[856px]:mt-3 max-[856px]:flex-row max-[856px]:items-center  max-[856px]:justify-center max-[856px]:gap-3">
+          <div className="flex flex-col max-homeMd:mt-32 max-homeSm:mt-3 max-homeSm:flex-row max-homeSm:items-center  max-homeSm:justify-center max-homeSm:gap-3">
             <div className="font-nunitoSans text-xl font-light leading-none tracking-titleSpacing">
               Frontend Developer
             </div>
             <div className="text-3xl tracking-titleSpacing flex items-center">
-              <span className="font-pretendard font-bold max-[856px]:text-xl">
+              <span className="font-pretendard font-bold max-homeSm:text-xl">
                 양희진
               </span>
-              <span className="font-nunitoSans max-[856px]:hidden">
+              <span className="font-nunitoSans max-homeSm:hidden">
                 &nbsp;YANG HEEJIN
               </span>
             </div>
@@ -111,14 +111,24 @@ const Home = () => {
         <div className="w-400 h-235">
           <AboutClipImage />
         </div>
-        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20">
-          <div className="ml-56 font-pretendard flex flex-col gap-5">
-            <span className="text-white text-4xl font-semibold">
+        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20 max-[1725px]:w-380 max-[1613px]:w-352">
+          <div className="ml-56 font-pretendard flex flex-col gap-5 max-[1725px]:w-187.5 max-[1613px]:w-165">
+            <span className="text-white text-4xl font-semibold max-[1613px]:hidden">
               안녕하세요, 프론트엔드 개발자&nbsp;
               <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md">
                 양희진
               </span>
               &nbsp;입니다.
+            </span>
+            <span className="hidden text-white text-4xl font-semibold max-[1613px]:block ">
+              <div className="mb-2">안녕하세요,</div>
+              <span>
+                프론트엔드 개발자&nbsp;
+                <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md">
+                  양희진
+                </span>
+                &nbsp;입니다.
+              </span>
             </span>
             <span className="text-white text-xl font-light flex flex-col">
               <span>
@@ -151,7 +161,7 @@ const Home = () => {
             Photo
           </div>
         </div>
-        <div className="w-96 h-200 overflow-hidden absolute bottom-0 left-40">
+        <div className="w-96 h-200 overflow-hidden absolute bottom-0 right-3/4 max-[1784px]:right-[78%]">
           <img src="\img\placeholder_photo.png" alt="human illust" />
         </div>
       </section>

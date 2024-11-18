@@ -43,13 +43,13 @@ const Header = ({ modal, mobileMenu }: ModalOpenSet) => {
         className={`w-full h-fit flex justify-between items-center font-nunitoSans`}
       >
         <div
-          className="hidden max-[675px]:block max-[675px]:cursor-pointer max-[675px]:relative"
+          className="hidden max-headerSm:block max-headerSm:cursor-pointer max-headerSm:relative"
           onClick={() => mobileMenu(true)}
         >
           MENU
         </div>
         <div
-          className="w-12 h-12 rounded-full circleBorder overflow-hidden cursor-pointer max-[675px]:absolute max-[675px]:left-1/2 max-[675px]:-translate-x-1/2"
+          className="w-12 h-12 rounded-full circleBorder overflow-hidden cursor-pointer max-headerSm:absolute max-headerSm:left-1/2 max-headerSm:-translate-x-1/2"
           onClick={() => {
             pathSegments === "project"
               ? navigate("/")
@@ -58,7 +58,7 @@ const Header = ({ modal, mobileMenu }: ModalOpenSet) => {
         >
           <Sphere area={"header"} />
         </div>
-        <nav className="max-[675px]:hidden">
+        <nav className="max-headerSm:hidden">
           <ul className="flex gap-7">
             {mainMenuPC.map((item: MenuItem) => {
               return (
@@ -73,7 +73,7 @@ const Header = ({ modal, mobileMenu }: ModalOpenSet) => {
           </ul>
         </nav>
         <button
-          className={`border border-mainBlack bg-bgGrey rounded-full py-1.5 px-5 transition hover:bg-mainBlack hover:text-bgGrey ${filpOpen ? "invisible" : "visible"} max-[675px]:p-0 max-[675px]:border-none max-[675px]:hover:bg-bgGrey max-[675px]:hover:text-mainBlack`}
+          className={`border border-mainBlack bg-bgGrey rounded-full py-1.5 px-5 transition hover:bg-mainBlack hover:text-bgGrey ${filpOpen ? "invisible" : "visible"} max-headerSm:p-0 max-headerSm:border-none max-headerSm:hover:bg-bgGrey max-headerSm:hover:text-mainBlack`}
           onClick={() => {
             modal(true);
           }}
