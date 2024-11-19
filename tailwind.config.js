@@ -79,6 +79,7 @@ export default {
         160: "40rem",
         165: "41.25rem",
         187.5: "46.875rem",
+        200: "50rem",
         284: "71rem",
         308: "77rem",
         352: "88rem",
@@ -121,6 +122,9 @@ export default {
       },
       rotate: {
         135: "135deg",
+      },
+      scale: {
+        200: "2",
       },
       boxShadow: {
         borderBottom: "0 1px 0 rgb(51, 51, 51)",

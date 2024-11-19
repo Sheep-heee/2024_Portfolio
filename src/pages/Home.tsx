@@ -7,6 +7,7 @@ import EmailIcon from "../assets/icon/ui_icon/EmailIcon";
 import CodeTag from "../assets/icon/dev_icon/CodeTag";
 import Arrow from "../assets/Arrow";
 import AboutClipImage from "../components/Home/AboutClipImage";
+import AboutClipImageSm from "../components/Home/AboutClipImageSm";
 import SkillsClipImage from "../components/Home/SkillsClipImage";
 import MySkillsTitle from "../components/Home/MySkillsTitle";
 import SkillItem from "../components/Home/SkillItem";
@@ -78,7 +79,7 @@ const Home = () => {
             <Sphere area={"home3"} />
           </div>
         </motion.div>
-        <div className="px-24 h-168 flex flex-col justify-between mb-12 max-homeMd:justify-normal max-homeMd:h-96">
+        <div className="px-24 h-168 flex flex-col justify-between mb-12 max-homeMd:justify-normal max-homeMd:h-96 max-homeSm:h-36">
           <div className="font-nunitoSans flex flex-col max-homeSm:flex-col-reverse max-homeSm:items-center max-homeSm:mt-10">
             <div className="font-bold flex items-center gap-5 mt-20 max-homeSm:gap-2 max-homeSm:mt-0">
               <h1 className="leading-none tracking-titleSpacing text-title max-homeLg:text-9xl max-homeMd:text-7xl max-homeSm:text-5xl">
@@ -88,16 +89,16 @@ const Home = () => {
                 <CodeTag />
               </div>
             </div>
-            <div className="text-7xl font-light tracking-titleSpacing max-homeLg:text-5xl max-homeMd:text-3xl">
+            <div className="text-7xl font-light tracking-titleSpacing max-homeLg:text-5xl max-homeMd:text-3xl max-homeMd:text-nowrap">
               Crafting Experiences
             </div>
           </div>
           <div className="flex flex-col max-homeMd:mt-32 max-homeSm:mt-3 max-homeSm:flex-row max-homeSm:items-center  max-homeSm:justify-center max-homeSm:gap-3">
-            <div className="font-nunitoSans text-xl font-light leading-none tracking-titleSpacing">
+            <div className="font-nunitoSans text-xl font-light leading-none tracking-titleSpacing max-[418px]:text-nowrap">
               Frontend Developer
             </div>
             <div className="text-3xl tracking-titleSpacing flex items-center">
-              <span className="font-pretendard font-bold max-homeSm:text-xl">
+              <span className="font-pretendard font-bold max-homeSm:text-xl max-[418px]:text-nowrap">
                 양희진
               </span>
               <span className="font-nunitoSans max-homeSm:hidden">
@@ -107,12 +108,18 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section id="aboutme" className="w-full h-auto relative">
-        <div className="w-400 h-235">
+      <section
+        id="aboutme"
+        className="w-full h-auto relative max-[1595px]:h-[831px] max-[1390px]:h-[728px]"
+      >
+        <div className="w-400 h-235 max-[1595px]:w-352 max-[1390px]:w-308 max-homeMd:w-200 max-homeSm:hidden">
           <AboutClipImage />
         </div>
-        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20 max-[1725px]:w-380 max-[1613px]:w-352">
-          <div className="ml-56 font-pretendard flex flex-col gap-5 max-[1725px]:w-187.5 max-[1613px]:w-165">
+        <div className="hidden px-8 pb-8 w-full h-110 relative max-homeSm:block">
+          <AboutClipImageSm />
+        </div>
+        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20 max-[1725px]:w-380 max-[1613px]:w-11/12 max-[1595px]:top-48 max-[1390px]:top-40 max-[1360px]:w-full max-[1360px]:rounded-none max-[1360px]:justify-center max-homeSm:static">
+          <div className="ml-56 font-pretendard flex flex-col gap-5 max-[1725px]:w-187.5 max-[1613px]:w-11/12 max-[1360px]:ml-0">
             <span className="text-white text-4xl font-semibold max-[1613px]:hidden">
               안녕하세요, 프론트엔드 개발자&nbsp;
               <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md">
@@ -120,7 +127,7 @@ const Home = () => {
               </span>
               &nbsp;입니다.
             </span>
-            <span className="hidden text-white text-4xl font-semibold max-[1613px]:block ">
+            <span className="hidden text-white text-4xl font-semibold max-[1613px]:block max-[1360px]:text-center max-[1360px]:mb-2 max-[560px]:hidden">
               <div className="mb-2">안녕하세요,</div>
               <span>
                 프론트엔드 개발자&nbsp;
@@ -130,7 +137,15 @@ const Home = () => {
                 &nbsp;입니다.
               </span>
             </span>
-            <span className="text-white text-xl font-light flex flex-col">
+            <span className="hidden text-white text-4xl font-semibold text-center mb-2 max-[560px]:block ">
+              <div className="mb-2">안녕하세요,</div>
+              <div className="mb-2">프론트엔드 개발자&nbsp;</div>
+              <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md max-[1360px]:py-0">
+                양희진
+              </span>
+              &nbsp;입니다.
+            </span>
+            <span className="text-white text-xl font-light flex flex-col max-[1613px]:hidden">
               <span>
                 쇼핑몰의 운영 디자이너로 일한 약 6년의 시간동안 시각적인
                 요소에만 집중하였습니다.
@@ -141,8 +156,16 @@ const Home = () => {
               </span>
               <span>그리하여 프론트엔드 개발자의 길을 걷기로 하였습니다.</span>
             </span>
+            <span className="hidden text-white text-xl font-light max-[1613px]:block max-[1613px]:grow max-[1360px]:text-center">
+              <span className="break-keep">
+                쇼핑몰의 운영 디자이너로 일한 약 6년의 시간동안 시각적인
+                요소에만 집중하였습니다. 그러나 단순히 이미지로만 보이는
+                것보다는 더 인터랙티브한 사용자 경험을 제공하고 싶은 욕심이
+                생겼습니다. 그리하여 프론트엔드 개발자의 길을 걷기로 하였습니다.
+              </span>
+            </span>
             <hr />
-            <div className="flex gap-8">
+            <div className="flex gap-8 max-[1360px]:gap-0 max-[1360px]:justify-between max-[438px]:flex-col max-[438px]:items-center">
               <div className="text-white text-xl font-light flex items-center gap-2">
                 <div className="w-6 h-6 flex items-center justify-center">
                   <BirthdayCake />
@@ -157,17 +180,17 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="w-80 h-96 bg-blue rounded-xl flex items-center justify-center text-white">
+          <div className="w-80 h-96 bg-blue rounded-xl flex items-center justify-center text-white max-[1613px]:mr-28 max-[1613px]:flex-none max-[1360px]:hidden">
             Photo
           </div>
         </div>
-        <div className="w-96 h-200 overflow-hidden absolute bottom-0 right-3/4 max-[1784px]:right-[78%]">
+        <div className="w-96 h-200 overflow-hidden absolute bottom-0 right-3/4 max-[1784px]:right-[78%] max-[1613px]:right-[74%] max-[1360px]:hidden">
           <img src="\img\placeholder_photo.png" alt="human illust" />
         </div>
       </section>
       <section
         id="myskills"
-        className="w-full h-auto relative mt-20 font-nunitoSans"
+        className="w-full h-auto relative mt-20 font-nunitoSans max-homeSm:mt-60"
       >
         <MySkillsTitle />
         <div className="h-auto pt-72 pb-24 relative">

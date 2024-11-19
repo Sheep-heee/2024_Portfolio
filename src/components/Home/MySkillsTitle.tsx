@@ -5,14 +5,17 @@ const MySkillsTitle = () => {
   const [groups, setGroups] = useState<number[]>([0, 1, 2, 3]);
   const controls = useAnimationControls();
   const groupsRef = useRef(groups);
+  const itemRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     groupsRef.current = groups;
 
+    const itemWidth = itemRef.current !== null && itemRef.current.clientWidth;
+
     const loopAnimation = async () => {
       while (true) {
         await controls.start({
-          x: -1066,
+          x: -itemWidth,
           transition: { duration: 6, ease: "linear" },
         });
 
@@ -27,20 +30,22 @@ const MySkillsTitle = () => {
         });
       }
     };
+
     loopAnimation();
   }, []);
 
   return (
-    <motion.div
-      className="flex gap-14 items-center absolute top-0"
-      animate={controls}
-    >
+    <motion.div className="flex items-center absolute top-0" animate={controls}>
       {groups.map((group) => (
-        <div key={group} className="flex gap-14 items-center">
-          <div className="font-bold text-title tracking-titleSpacing text-nowrap">
+        <div
+          ref={itemRef}
+          key={group}
+          className="flex gap-14 pr-14 items-center max-homeSm:gap-8 max-homeSm:pr-8"
+        >
+          <div className="font-bold text-title tracking-titleSpacing text-nowrap max-homeSm:text-9xl">
             MY SKILLS
           </div>
-          <div className="w-8 h-8 bg-mainBlack rounded-full"></div>
+          <div className="w-8 h-8 bg-mainBlack rounded-full max-homeSm:w-4 max-homeSm:h-4"></div>
         </div>
       ))}
     </motion.div>
