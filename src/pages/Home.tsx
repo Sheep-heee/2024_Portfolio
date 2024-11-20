@@ -11,6 +11,7 @@ import AboutClipImageSm from "../components/Home/AboutClipImageSm";
 import SkillsClipImage from "../components/Home/SkillsClipImage";
 import MySkillsTitle from "../components/Home/MySkillsTitle";
 import SkillItem from "../components/Home/SkillItem";
+import SkillItemMb from "../components/Home/SkillItemMb";
 import { skillsData } from "../utils/utils";
 import ProjectsLayout from "../components/Projects/ProjectsLayout";
 import Experience from "../components/Home/Experience";
@@ -193,25 +194,34 @@ const Home = () => {
         className="w-full h-auto relative mt-20 font-nunitoSans max-homeSm:mt-60"
       >
         <MySkillsTitle />
-        <div className="h-auto pt-72 pb-24 relative">
-          <Arrow section={"skill"} />
-          <div className="h-full px-32 flex gap-20 pt-28">
-            <div className="w-284">
-              <div className="flex flex-col gap-3 leading-none mb-20">
-                <span className="font-semibold text-7xl">
+        <div className="h-auto pt-72 pb-24 relative max-homeSm:pt-40">
+          <div className="max-[1360px]:hidden">
+            <Arrow section={"skill"} />
+          </div>
+          <div className="h-full px-32 flex gap-20 pt-28 max-[1600px]:pt-20 max-homeSm:px-5">
+            <div className="w-284 max-[1798px]:w-full">
+              <div className="flex flex-col gap-3 leading-none mb-20 max-[1600px]:mb-10 max-[1360px]:items-center">
+                <span className="font-semibold text-7xl max-[1600px]:text-5xl max-[1360px]:text-center">
                   IDEA, DESIGN, DEVELOP
                 </span>
                 <div>
-                  <span className="uppercase font-medium text-3xl">
+                  <span className="uppercase font-medium text-3xl max-[1600px]:text-2xl max-[1360px]:text-center">
                     Modular, Interactive, Creative
                   </span>
                 </div>
               </div>
-              {skillsData.map((skill) => (
-                <SkillItem key={skill.skillId} {...skill} />
-              ))}
+              <div className="max-[1360px]:hidden">
+                {skillsData.map((skill) => (
+                  <SkillItem key={skill.skillId} {...skill} />
+                ))}
+              </div>
+              <div className="hidden max-[1360px]:block">
+                {skillsData.map((skill) => (
+                  <SkillItemMb key={skill.skillId} {...skill} />
+                ))}
+              </div>
             </div>
-            <div className="grow flex relative">
+            <div className="grow flex relative max-[1798px]:grow-0 max-[1798px]:flex-none max-[1798px]:w-108 max-[1440px]:w-80 max-[1360px]:hidden">
               <SkillsClipImage />
             </div>
           </div>

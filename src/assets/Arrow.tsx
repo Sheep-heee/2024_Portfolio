@@ -6,7 +6,7 @@ const Arrow = ({ section }: Section) => {
       className={
         section === "main"
           ? "mainArrow max-[1669px]:mainArrow1669 max-[1221px]:mainArrow1221 max-[856px]:hidden"
-          : "skillArrow"
+          : "skillArrow max-[1600px]:skillArrow1600"
       }
     >
       <div className="w-full h-full relative flex items-center">

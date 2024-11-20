@@ -34,7 +34,7 @@ const Layout = () => {
   return (
     <>
       <header
-        className={`w-full px-8 h-24 fixed transition-all duration-300 ${isVisible ? "top-0 opacity-100" : "-top-24 opacity-0"} z-20 flex items-center justify-center ${scrollY > 1134 && pathname === "/" ? "bg-bgGrey shadow-borderBottom" : scrollY < 1134 && pathname === "/" ? "" : "bg-bgGrey"} max-homeMd:bg-bgGrey max-homeMd:shadow-borderBottom`}
+        className={`w-full px-8 h-24 fixed transition-all duration-300 ${isVisible ? "top-0 opacity-100" : "-top-24 opacity-0"} z-20 flex items-center justify-center ${scrollY > 1134 && pathname === "/" ? "bg-bgGrey shadow-borderBottom" : scrollY < 1134 && pathname === "/" ? "" : "bg-bgGrey"} max-homeMd:bg-bgGrey`}
       >
         <Header modal={setModalOpen} mobileMenu={setSmallMenuOpen} />
       </header>

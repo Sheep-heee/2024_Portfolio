@@ -146,20 +146,13 @@ export const NextIcon = () => {
   return (
     <svg
       width="100%"
-      height="auto"
+      height="100%"
       fill="none"
       viewBox="0 0 180 180"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g mask="url(#mask0_292_290)">
-        <circle
-          cx="90"
-          cy="90"
-          fill="black"
-          r="87"
-          stroke="var( --next-icon-border)"
-          stroke-width="6"
-        ></circle>
+      <g>
+        <circle cx="90" cy="90" fill="black" r="87" stroke-width="6"></circle>
         <path
           d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
           fill="url(#paint0_linear_292_290)"

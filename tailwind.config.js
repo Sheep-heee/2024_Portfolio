@@ -162,6 +162,13 @@ export default {
           top: "484px",
           right: "0",
         },
+        ".skillArrow1600": {
+          width: "calc(100% - 570px)",
+          height: "2.25rem",
+          position: "absolute",
+          top: "425px",
+          right: "0",
+        },
         ".experienceTitle": {
           width: "fit-content",
           fontSize: "1.75rem",
