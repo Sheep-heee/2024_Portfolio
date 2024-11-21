@@ -23,6 +23,9 @@ const Home = () => {
   const contactRef = useRef<HTMLDivElement>(null);
   const contactImageRef = useRef<HTMLDivElement>(null);
   const scrollY = useSelector((state: RootState) => state.scrollY.scrollY);
+  const windowWidth = useSelector(
+    (state: RootState) => state.windowWidth.windowWidth
+  );
 
   const contactTop = -(
     (contactRef.current !== null && contactImageRef.current !== null
@@ -119,52 +122,62 @@ const Home = () => {
         <div className="hidden px-8 pb-8 w-full h-110 relative max-homeSm:block">
           <AboutClipImageSm />
         </div>
-        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20 max-[1725px]:w-380 max-[1613px]:w-11/12 max-[1595px]:top-48 max-[1390px]:top-40 max-[1360px]:w-full max-[1360px]:rounded-none max-[1360px]:justify-center max-homeSm:static">
+        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20 max-[1725px]:w-380 max-[1613px]:w-11/12 max-[1595px]:top-48 max-[1390px]:top-40 max-[1360px]:w-full max-[1360px]:rounded-none max-[1360px]:justify-center max-homeMd:top-20 max-homeSm:static">
           <div className="ml-56 font-pretendard flex flex-col gap-5 max-[1725px]:w-187.5 max-[1613px]:w-11/12 max-[1360px]:ml-0">
-            <span className="text-white text-4xl font-semibold max-[1613px]:hidden">
-              안녕하세요, 프론트엔드 개발자&nbsp;
-              <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md">
-                양희진
-              </span>
-              &nbsp;입니다.
-            </span>
-            <span className="hidden text-white text-4xl font-semibold max-[1613px]:block max-[1360px]:text-center max-[1360px]:mb-2 max-[560px]:hidden">
-              <div className="mb-2">안녕하세요,</div>
-              <span>
-                프론트엔드 개발자&nbsp;
+            {windowWidth > 1613 ? (
+              <span className="text-white text-4xl font-semibold">
+                안녕하세요, 프론트엔드 개발자&nbsp;
                 <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md">
                   양희진
                 </span>
                 &nbsp;입니다.
               </span>
-            </span>
-            <span className="hidden text-white text-4xl font-semibold text-center mb-2 max-[560px]:block ">
-              <div className="mb-2">안녕하세요,</div>
-              <div className="mb-2">프론트엔드 개발자&nbsp;</div>
-              <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md max-[1360px]:py-0">
-                양희진
+            ) : windowWidth > 560 ? (
+              <span className="text-white text-4xl font-semibold max-[1360px]:text-center max-[1360px]:mb-2">
+                <div className="mb-2">안녕하세요,</div>
+                <span>
+                  프론트엔드 개발자&nbsp;
+                  <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md">
+                    양희진
+                  </span>
+                  &nbsp;입니다.
+                </span>
               </span>
-              &nbsp;입니다.
-            </span>
-            <span className="text-white text-xl font-light flex flex-col max-[1613px]:hidden">
-              <span>
-                쇼핑몰의 운영 디자이너로 일한 약 6년의 시간동안 시각적인
-                요소에만 집중하였습니다.
+            ) : (
+              <span className="text-white text-4xl font-semibold text-center mb-2">
+                <div className="mb-2">안녕하세요,</div>
+                <div className="mb-2">프론트엔드 개발자&nbsp;</div>
+                <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md max-[1360px]:py-0">
+                  양희진
+                </span>
+                &nbsp;입니다.
               </span>
-              <span>
-                그러나 단순히 이미지로만 보이는 것보다는 더 인터랙티브한 사용자
-                경험을 제공하고 싶은 욕심이 생겼습니다.
+            )}
+            {windowWidth > 1613 ? (
+              <span className="text-white text-xl font-light flex flex-col">
+                <span>
+                  쇼핑몰의 운영 디자이너로 일한 약 6년의 시간동안 시각적인
+                  요소에만 집중하였습니다.
+                </span>
+                <span>
+                  그러나 단순히 이미지로만 보이는 것보다는 더 인터랙티브한
+                  사용자 경험을 제공하고 싶은 욕심이 생겼습니다.
+                </span>
+                <span>
+                  그리하여 프론트엔드 개발자의 길을 걷기로 하였습니다.
+                </span>
               </span>
-              <span>그리하여 프론트엔드 개발자의 길을 걷기로 하였습니다.</span>
-            </span>
-            <span className="hidden text-white text-xl font-light max-[1613px]:block max-[1613px]:grow max-[1360px]:text-center">
-              <span className="break-keep">
-                쇼핑몰의 운영 디자이너로 일한 약 6년의 시간동안 시각적인
-                요소에만 집중하였습니다. 그러나 단순히 이미지로만 보이는
-                것보다는 더 인터랙티브한 사용자 경험을 제공하고 싶은 욕심이
-                생겼습니다. 그리하여 프론트엔드 개발자의 길을 걷기로 하였습니다.
+            ) : (
+              <span className="text-white text-xl font-light max-[1613px]:grow max-[1360px]:text-center">
+                <span className="break-keep">
+                  쇼핑몰의 운영 디자이너로 일한 약 6년의 시간동안 시각적인
+                  요소에만 집중하였습니다. 그러나 단순히 이미지로만 보이는
+                  것보다는 더 인터랙티브한 사용자 경험을 제공하고 싶은 욕심이
+                  생겼습니다. 그리하여 프론트엔드 개발자의 길을 걷기로
+                  하였습니다.
+                </span>
               </span>
-            </span>
+            )}
             <hr />
             <div className="flex gap-8 max-[1360px]:gap-0 max-[1360px]:justify-between max-[438px]:flex-col max-[438px]:items-center">
               <div className="text-white text-xl font-light flex items-center gap-2">
@@ -181,13 +194,17 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="w-80 h-96 bg-blue rounded-xl flex items-center justify-center text-white max-[1613px]:mr-28 max-[1613px]:flex-none max-[1360px]:hidden">
-            Photo
+          {windowWidth > 1360 && (
+            <div className="w-80 h-96 bg-blue rounded-xl flex items-center justify-center text-white max-[1613px]:mr-28 max-[1613px]:flex-none ">
+              Photo
+            </div>
+          )}
+        </div>
+        {windowWidth > 1360 && (
+          <div className="w-96 h-200 overflow-hidden absolute bottom-0 right-3/4 max-[1784px]:right-[78%] max-[1613px]:right-[74%]">
+            <img src="\img\placeholder_photo.png" alt="human illust" />
           </div>
-        </div>
-        <div className="w-96 h-200 overflow-hidden absolute bottom-0 right-3/4 max-[1784px]:right-[78%] max-[1613px]:right-[74%] max-[1360px]:hidden">
-          <img src="\img\placeholder_photo.png" alt="human illust" />
-        </div>
+        )}
       </section>
       <section
         id="myskills"
@@ -195,41 +212,42 @@ const Home = () => {
       >
         <MySkillsTitle />
         <div className="h-auto pt-72 pb-24 relative max-homeSm:pt-40">
-          <div className="max-[1360px]:hidden">
-            <Arrow section={"skill"} />
-          </div>
+          {windowWidth > 1360 && (
+            <div>
+              <Arrow section={"skill"} />
+            </div>
+          )}
           <div className="h-full px-32 flex gap-20 pt-28 max-[1600px]:pt-20 max-homeSm:px-5">
             <div className="w-284 max-[1798px]:w-full">
               <div className="flex flex-col gap-3 leading-none mb-20 max-[1600px]:mb-10 max-[1360px]:items-center">
                 <span className="font-semibold text-7xl max-[1600px]:text-5xl max-[1360px]:text-center">
                   IDEA, DESIGN, DEVELOP
                 </span>
-                <div>
+                <div className="max-[1360px]:text-center">
                   <span className="uppercase font-medium text-3xl max-[1600px]:text-2xl max-[1360px]:text-center">
                     Modular, Interactive, Creative
                   </span>
                 </div>
               </div>
-              <div className="max-[1360px]:hidden">
-                {skillsData.map((skill) => (
-                  <SkillItem key={skill.skillId} {...skill} />
-                ))}
-              </div>
-              <div className="hidden max-[1360px]:block">
-                {skillsData.map((skill) => (
-                  <SkillItemMb key={skill.skillId} {...skill} />
-                ))}
-              </div>
+              {windowWidth < 1360
+                ? skillsData.map((skill) => (
+                    <SkillItemMb key={skill.skillId} {...skill} />
+                  ))
+                : skillsData.map((skill) => (
+                    <SkillItem key={skill.skillId} {...skill} />
+                  ))}
             </div>
-            <div className="grow flex relative max-[1798px]:grow-0 max-[1798px]:flex-none max-[1798px]:w-108 max-[1440px]:w-80 max-[1360px]:hidden">
-              <SkillsClipImage />
-            </div>
+            {windowWidth > 1360 && (
+              <div className="grow flex relative max-[1798px]:grow-0 max-[1798px]:flex-none max-[1798px]:w-108 max-[1440px]:w-80">
+                <SkillsClipImage />
+              </div>
+            )}
           </div>
         </div>
       </section>
       <section
         id="projects"
-        className="w-full h-screen bg-mainBlack px-32 py-24 text-white overflow-hidden"
+        className="w-full h-229.75 bg-mainBlack px-32 py-24 text-white overflow-hidden"
       >
         <ProjectsLayout />
       </section>

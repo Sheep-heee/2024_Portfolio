@@ -54,7 +54,7 @@ const SkillItem = ({ skillId, skillName, description, stacks }: SkillsData) => {
         </div>
       </div>
       <div
-        className={`${descOpen ? "h-auto" : "h-0"} ml-56 font-pretendard ${descOpen ? "pb-6" : "pb-0"} overflow-hidden transition-all`}
+        className={`${descOpen ? "h-auto" : "h-0"} ml-56 font-pretendard ${descOpen ? "pb-6" : "pb-0"} overflow-hidden transition-all max-[1698px]:ml-32`}
       >
         {description}
       </div>

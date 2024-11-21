@@ -10,6 +10,10 @@ import {
   ScrollYActionType,
   updateScrollY,
 } from "../../redux/actions/scrollValueAction";
+import {
+  WindowWidthActionType,
+  updateWindowWidth,
+} from "../../redux/actions/windowSizeAction";
 import { RootState } from "../../redux/reducers";
 
 interface ModalOpenSet {
@@ -18,23 +22,30 @@ interface ModalOpenSet {
 }
 
 const Header = ({ modal, mobileMenu }: ModalOpenSet) => {
-  const dispatch: Dispatch<ScrollYActionType> = useDispatch();
+  const dispatchScroll: Dispatch<ScrollYActionType> = useDispatch();
+  const dispatchWindowWidth: Dispatch<WindowWidthActionType> = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const pathSegments = location.pathname.split("/").filter(Boolean)[0];
   const filpOpen = useSelector((state: RootState) => state.filpOpen.filpOpen);
 
   const handleScroll = () => {
-    dispatch(updateScrollY(window.scrollY));
+    dispatchScroll(updateScrollY(window.scrollY));
   };
 
   const windowWidth = () => {
+    dispatchWindowWidth(updateWindowWidth(window.innerWidth));
     console.log(window.innerWidth);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", windowWidth);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", windowWidth);
+    };
   }, []);
 
   return (

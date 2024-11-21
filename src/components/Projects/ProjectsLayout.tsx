@@ -1,18 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useAnimationControls } from "framer-motion";
+import { useSelector } from "react-redux";
 import { projectTab } from "../../utils/utils";
 import projectData from "../../utils/projectsData.json";
 import { ProjectTab } from "../../utils/interface";
 import { ProjectData } from "../../utils/interface";
 import ProjectThum from "./ProjectThum";
 import SmallArrow from "../../assets/icon/ui_icon/SmallArrow";
+import { RootState } from "../../redux/reducers";
 
 const ProjectsLayout = () => {
   const navigate = useNavigate();
   const [newTab, setNewTab] = useState(projectTab);
   const [newProjectData, setNewProjectData] = useState(projectData);
   const controls = useAnimationControls();
+
+  const windowWidth = useSelector(
+    (state: RootState) => state.windowWidth.windowWidth
+  );
+
+  const windowBeginWidth = () => {
+    let width;
+    if (window.innerWidth > 1902) {
+      width = (window.innerWidth - 256 - 96) / 3;
+    } else if (window.innerWidth > 1603) {
+      width = (window.innerWidth - 256 - 80) / 3;
+    }
+    return width;
+  };
+
+  const [projectItemWidth, setProjectItemWidth] = useState(
+    windowBeginWidth() as number
+  );
+
   const activeChange = (select: ProjectTab) => {
     const updatedTabs = projectTab.map((tab: ProjectTab) => {
       return { ...tab, active: tab.id === select.id };
@@ -32,7 +53,7 @@ const ProjectsLayout = () => {
     if (slideProject.length < 4) return;
 
     await controls.start({
-      x: -560 * num,
+      x: -564 * num,
       transition: { duration: 0.2 },
     });
 
@@ -47,6 +68,10 @@ const ProjectsLayout = () => {
 
     controls.set({ x: 0 });
   };
+
+  useEffect(() => {
+    setProjectItemWidth((windowWidth - 256 - 80) / 3);
+  }, [windowWidth]);
 
   return (
     <>
@@ -71,10 +96,14 @@ const ProjectsLayout = () => {
         <div className="w-full overflow-hidden">
           <motion.div
             animate={controls}
-            className={`flex gap-12 w-fit ${newProjectData.length > 3 ? "relative -left-141" : ""}`}
+            className={`w-fit flex gap-12 ${newProjectData.length > 3 ? "relative -left-141" : ""} max-[1902px]:gap-10`}
           >
             {newProjectData.map((data: ProjectData) => (
-              <div key={data.id} className="flex flex-col gap-8 w-129">
+              <div
+                key={data.id}
+                className="flex flex-col gap-8"
+                style={{ width: `${projectItemWidth}px` }}
+              >
                 <div
                   className="w-full h-88 cursor-pointer"
                   onClick={() =>

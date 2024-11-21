@@ -94,6 +94,7 @@ export default {
         120: "30rem",
         168: "42rem",
         200: "50rem",
+        229.75: "57.4375rem",
         235: "59rem",
         308: "77rem",
         336: "84rem",
@@ -108,6 +109,7 @@ export default {
         120: "30rem",
         125: "31rem",
         141: "35.25rem",
+        144: "36rem",
         149: "37rem",
       },
       spacing: {
