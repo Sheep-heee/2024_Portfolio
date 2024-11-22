@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import ToolItem from "../Common/ToolItem";
 import { skillsData } from "../../utils/utils";
 import { Stack } from "../../utils/interface";
@@ -10,10 +9,6 @@ interface ProjectThumProps {
 }
 
 const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
-  const [toolsWidth, setToolsWidth] = useState(0);
-  const [thumWidth, setThumWidth] = useState(468);
-  const toolsArea = useRef<HTMLDivElement>(null);
-  const thumArea = useRef<HTMLDivElement>(null);
   const stackList: Stack[] = [];
 
   (() => {
@@ -22,22 +17,10 @@ const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
     });
   })();
 
-  useEffect(() => {
-    setThumWidth(
-      thumArea.current !== null ? thumArea.current.clientWidth : 468
-    );
-    setToolsWidth(
-      toolsArea.current !== null ? toolsArea.current.clientWidth : 0
-    );
-  }, []);
-
   return (
-    <div
-      ref={thumArea}
-      className="w-full h-full flex flex-col justify-between rounded-2xl overflow-hidden p-6 relative"
-    >
+    <div className="w-full h-full flex flex-col justify-between rounded-2xl overflow-hidden p-6 relative">
       <img
-        className="w-full h-full object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0 transition-transform duration-300 hover:scale-110"
+        className="w-full h-full object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0 transition-transform duration-300 hover:scale-110 max-[768px]:hover:scale-100"
         src={thumbnail}
         alt="project thumnail"
       />
@@ -46,25 +29,29 @@ const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
           {scale}
         </span>
       </div>
-      <div
-        ref={toolsArea}
-        className="w-fit flex gap-2 items-center z-10 text-mainBlack text-nowrap"
-      >
-        {toolId
-          .slice(0, toolsWidth > thumWidth - 48 ? 1 : 2)
-          .map((item: number, index) => (
+      <div className="w-fit flex gap-2 items-center z-10 text-mainBlack text-nowrap flex-wrap">
+        {toolId.slice(0, 2).map((item: number, index) =>
+          index === toolId.slice(0, 2).length - 1 && toolId.length > 2 ? (
+            <div className="flex gap-2">
+              <ToolItem
+                key={index}
+                toolId={stackList[item].toolId}
+                toolsName={stackList[item].toolsName}
+                iconCode={stackList[item].iconCode}
+              />
+              <div className="font-bold text-xl leading-none py-2 px-3 rounded-xl bg-white text-mainBlack max-[1600px]:py-0 max-[1600px]:px-3 max-[1600px]:rounded-md max-[1600px]:text-base">
+                +{toolId.length - 2}
+              </div>
+            </div>
+          ) : (
             <ToolItem
               key={index}
               toolId={stackList[item].toolId}
               toolsName={stackList[item].toolsName}
               iconCode={stackList[item].iconCode}
             />
-          ))}
-        {toolId.length > 2 ? (
-          <div className="font-bold text-xl leading-none py-2 px-3 rounded-xl bg-white text-mainBlack">
-            +{toolId.length - 2}
-          </div>
-        ) : null}
+          )
+        )}
       </div>
     </div>
   );

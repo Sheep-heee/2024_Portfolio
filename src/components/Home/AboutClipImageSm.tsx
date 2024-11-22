@@ -13,8 +13,6 @@ const AboutClipImage = () => {
     if (scrollY <= 300) {
       const scrollPercent = (scrollY / 300) * 100;
 
-      console.log(scrollPercent);
-
       const topValue = (percent: number): number => {
         switch (true) {
           case 0 <= percent && percent <= 30:

@@ -23,9 +23,15 @@ const ProjectsLayout = () => {
   const windowBeginWidth = () => {
     let width;
     if (window.innerWidth > 1902) {
-      width = (window.innerWidth - 256 - 96) / 3;
-    } else if (window.innerWidth > 1603) {
-      width = (window.innerWidth - 256 - 80) / 3;
+      width = (document.documentElement.clientWidth - 256 - 96) / 3;
+    } else if (window.innerWidth > 1620) {
+      width = (document.documentElement.clientWidth - 256 - 80) / 3;
+    } else if (window.innerWidth <= 1620 && window.innerWidth > 1200) {
+      width = (document.documentElement.clientWidth - 256 - 40) / 2;
+    } else if (window.innerWidth <= 1200 && window.innerWidth > 1000) {
+      width = (document.documentElement.clientWidth - 48 - 40) / 2;
+    } else {
+      width = document.documentElement.clientWidth - 48;
     }
     return width;
   };
@@ -52,8 +58,11 @@ const ProjectsLayout = () => {
     let slideProject = newProjectData;
     if (slideProject.length < 4) return;
 
+    let xWidth =
+      windowWidth > 1902 ? projectItemWidth + 48 : projectItemWidth + 40;
+
     await controls.start({
-      x: -564 * num,
+      x: -xWidth * num,
       transition: { duration: 0.2 },
     });
 
@@ -70,19 +79,59 @@ const ProjectsLayout = () => {
   };
 
   useEffect(() => {
-    setProjectItemWidth((windowWidth - 256 - 80) / 3);
+    if (windowWidth > 1902) {
+      setProjectItemWidth(
+        (windowWidth -
+          256 -
+          96 -
+          (windowWidth - document.documentElement.clientWidth)) /
+          3
+      );
+    } else if (windowWidth > 1620) {
+      setProjectItemWidth(
+        (windowWidth -
+          256 -
+          80 -
+          (windowWidth - document.documentElement.clientWidth)) /
+          3
+      );
+    } else if (windowWidth <= 1620 && windowWidth > 1200) {
+      setProjectItemWidth(
+        (windowWidth -
+          256 -
+          40 -
+          (windowWidth - document.documentElement.clientWidth)) /
+          2
+      );
+    } else if (windowWidth <= 1200 && windowWidth > 1000) {
+      setProjectItemWidth(
+        (windowWidth -
+          48 -
+          40 -
+          (windowWidth - document.documentElement.clientWidth)) /
+          2
+      );
+    } else {
+      setProjectItemWidth(
+        windowWidth - 48 - (windowWidth - document.documentElement.clientWidth)
+      );
+    }
   }, [windowWidth]);
+
+  console.log(projectItemWidth);
 
   return (
     <>
-      <div className="flex justify-between items-end font-nunitoSans mb-14">
-        <div className="text-9xl uppercase font-bold">Projects</div>
-        <ul className="flex gap-5">
+      <div className="flex justify-between items-end font-nunitoSans mb-14 max-projectLg:flex-col max-projectLg:justify-center max-projectLg:items-center">
+        <div className="text-9xl uppercase font-bold max-projectSm:text-7xl max-projectXsm:mb-2">
+          Projects
+        </div>
+        <ul className="flex gap-5 max-projectSm:flex-wrap max-projectSm:justify-center max-projectSm:gap-2">
           {newTab.map((tab: ProjectTab) => {
             return (
               <li key={tab.id}>
                 <button
-                  className={`${tab.active && "bg-blue"} text-xl py-3 px-5 rounded-full transition-colors active:bg-blue`}
+                  className={`${tab.active && "bg-blue"} text-xl py-3 px-5 rounded-full transition-colors active:bg-blue max-projectSm:py-1 max-projectSm:px-3 max-projectSm:text-lg`}
                   onClick={() => activeChange(tab)}
                 >
                   {tab.name}
@@ -96,7 +145,10 @@ const ProjectsLayout = () => {
         <div className="w-full overflow-hidden">
           <motion.div
             animate={controls}
-            className={`w-fit flex gap-12 ${newProjectData.length > 3 ? "relative -left-141" : ""} max-[1902px]:gap-10`}
+            className={`w-fit flex gap-12 ${newProjectData.length > 3 ? "relative" : ""} max-projectXlg:gap-10`}
+            style={{
+              left: `-${newProjectData.length > 3 && windowWidth > 1903 ? projectItemWidth + 48 : projectItemWidth + 40}px`,
+            }}
           >
             {newProjectData.map((data: ProjectData) => (
               <div

@@ -39,6 +39,7 @@ const Header = ({ modal, mobileMenu }: ModalOpenSet) => {
   };
 
   useEffect(() => {
+    windowWidth();
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", windowWidth);
 

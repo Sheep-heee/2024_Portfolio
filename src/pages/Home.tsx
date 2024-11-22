@@ -114,16 +114,16 @@ const Home = () => {
       </section>
       <section
         id="aboutme"
-        className="w-full h-auto relative max-[1595px]:h-[831px] max-[1390px]:h-[728px]"
+        className="w-full h-auto relative max-aboutMd:h-[831px] max-aboutSm:h-[728px]"
       >
-        <div className="w-400 h-235 max-[1595px]:w-352 max-[1390px]:w-308 max-homeMd:w-200 max-homeSm:hidden">
+        <div className="w-400 h-235 max-aboutMd:w-352 max-aboutSm:w-308 max-homeMd:w-200 max-homeSm:hidden">
           <AboutClipImage />
         </div>
         <div className="hidden px-8 pb-8 w-full h-110 relative max-homeSm:block">
           <AboutClipImageSm />
         </div>
-        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20 max-[1725px]:w-380 max-[1613px]:w-11/12 max-[1595px]:top-48 max-[1390px]:top-40 max-[1360px]:w-full max-[1360px]:rounded-none max-[1360px]:justify-center max-homeMd:top-20 max-homeSm:static">
-          <div className="ml-56 font-pretendard flex flex-col gap-5 max-[1725px]:w-187.5 max-[1613px]:w-11/12 max-[1360px]:ml-0">
+        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20 max-aboutXlg:w-380 max-aboutLg:w-11/12 max-aboutMd:top-48 max-aboutSm:top-40 max-skillMd:w-full max-skillMd:rounded-none max-skillMd:justify-center max-homeMd:top-20 max-homeSm:static">
+          <div className="ml-56 font-pretendard flex flex-col gap-5 max-aboutXlg:w-187.5 max-aboutLg:w-11/12 max-skillMd:ml-0">
             {windowWidth > 1613 ? (
               <span className="text-white text-4xl font-semibold">
                 안녕하세요, 프론트엔드 개발자&nbsp;
@@ -133,7 +133,7 @@ const Home = () => {
                 &nbsp;입니다.
               </span>
             ) : windowWidth > 560 ? (
-              <span className="text-white text-4xl font-semibold max-[1360px]:text-center max-[1360px]:mb-2">
+              <span className="text-white text-4xl font-semibold max-skillMd:text-center max-skillMd:mb-2">
                 <div className="mb-2">안녕하세요,</div>
                 <span>
                   프론트엔드 개발자&nbsp;
@@ -147,7 +147,7 @@ const Home = () => {
               <span className="text-white text-4xl font-semibold text-center mb-2">
                 <div className="mb-2">안녕하세요,</div>
                 <div className="mb-2">프론트엔드 개발자&nbsp;</div>
-                <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md max-[1360px]:py-0">
+                <span className="text-mainBlack font-extrabold bg-white py-1 px-3 rounded-md max-skillMd:py-0">
                   양희진
                 </span>
                 &nbsp;입니다.
@@ -168,7 +168,7 @@ const Home = () => {
                 </span>
               </span>
             ) : (
-              <span className="text-white text-xl font-light max-[1613px]:grow max-[1360px]:text-center">
+              <span className="text-white text-xl font-light max-aboutLg:grow max-skillMd:text-center">
                 <span className="break-keep">
                   쇼핑몰의 운영 디자이너로 일한 약 6년의 시간동안 시각적인
                   요소에만 집중하였습니다. 그러나 단순히 이미지로만 보이는
@@ -179,7 +179,7 @@ const Home = () => {
               </span>
             )}
             <hr />
-            <div className="flex gap-8 max-[1360px]:gap-0 max-[1360px]:justify-between max-[438px]:flex-col max-[438px]:items-center">
+            <div className="flex gap-8 max-skillMd:gap-0 max-skillMd:justify-between max-aboutXsm:flex-col max-aboutXsm:items-center">
               <div className="text-white text-xl font-light flex items-center gap-2">
                 <div className="w-6 h-6 flex items-center justify-center">
                   <BirthdayCake />
@@ -195,13 +195,13 @@ const Home = () => {
             </div>
           </div>
           {windowWidth > 1360 && (
-            <div className="w-80 h-96 bg-blue rounded-xl flex items-center justify-center text-white max-[1613px]:mr-28 max-[1613px]:flex-none ">
+            <div className="w-80 h-96 bg-blue rounded-xl flex items-center justify-center text-white max-aboutLg:mr-28 max-aboutLg:flex-none ">
               Photo
             </div>
           )}
         </div>
         {windowWidth > 1360 && (
-          <div className="w-96 h-200 overflow-hidden absolute bottom-0 right-3/4 max-[1784px]:right-[78%] max-[1613px]:right-[74%]">
+          <div className="w-96 h-200 overflow-hidden absolute bottom-0 right-3/4 max-[1784px]:right-[78%] max-aboutLg:right-[74%]">
             <img src="\img\placeholder_photo.png" alt="human illust" />
           </div>
         )}
@@ -217,14 +217,14 @@ const Home = () => {
               <Arrow section={"skill"} />
             </div>
           )}
-          <div className="h-full px-32 flex gap-20 pt-28 max-[1600px]:pt-20 max-homeSm:px-5">
-            <div className="w-284 max-[1798px]:w-full">
-              <div className="flex flex-col gap-3 leading-none mb-20 max-[1600px]:mb-10 max-[1360px]:items-center">
-                <span className="font-semibold text-7xl max-[1600px]:text-5xl max-[1360px]:text-center">
+          <div className="h-full px-32 flex gap-20 pt-28 max-skillLg:pt-20 max-homeSm:px-5">
+            <div className="w-284 max-skillXlg:w-full">
+              <div className="flex flex-col gap-3 leading-none mb-20 max-skillLg:mb-10 max-skillMd:items-center">
+                <span className="font-semibold text-7xl max-skillLg:text-5xl max-skillMd:text-center">
                   IDEA, DESIGN, DEVELOP
                 </span>
-                <div className="max-[1360px]:text-center">
-                  <span className="uppercase font-medium text-3xl max-[1600px]:text-2xl max-[1360px]:text-center">
+                <div className="max-skillMd:text-center">
+                  <span className="uppercase font-medium text-3xl max-skillLg:text-2xl max-skillMd:text-center">
                     Modular, Interactive, Creative
                   </span>
                 </div>
@@ -238,7 +238,7 @@ const Home = () => {
                   ))}
             </div>
             {windowWidth > 1360 && (
-              <div className="grow flex relative max-[1798px]:grow-0 max-[1798px]:flex-none max-[1798px]:w-108 max-[1440px]:w-80">
+              <div className="grow flex relative max-skillXlg:grow-0 max-skillXlg:flex-none max-skillXlg:w-108 max-[1440px]:w-80">
                 <SkillsClipImage />
               </div>
             )}
@@ -247,11 +247,14 @@ const Home = () => {
       </section>
       <section
         id="projects"
-        className="w-full h-229.75 bg-mainBlack px-32 py-24 text-white overflow-hidden"
+        className="w-full h-auto bg-mainBlack px-32 py-24 text-white overflow-hidden max-projectMd:px-6 max-projectSm:py-14"
       >
         <ProjectsLayout />
       </section>
-      <section id="experience" className="w-full h-auto px-32 pt-52 pb-24">
+      <section
+        id="experience"
+        className="w-full h-auto px-32 pt-52 pb-24 max-projectMd:px-6 max-projectSm:pt-32"
+      >
         <Experience />
       </section>
       <section id="contact" className="w-full h-auto relative">

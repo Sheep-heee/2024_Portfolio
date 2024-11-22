@@ -74,5 +74,6 @@ interface ExperienceListItem {
 
 export interface ExperienceList {
   type: string;
+  typeH?: string;
   list: ExperienceListItem[];
 }

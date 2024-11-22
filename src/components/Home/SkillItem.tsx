@@ -26,7 +26,7 @@ const SkillItem = ({ skillId, skillName, description, stacks }: SkillsData) => {
         onClick={() => setDescOpen(!descOpen)}
       >
         <div className="flex items-end">
-          <div className="w-56 font-bold text-2xl leading-none max-[1698px]:w-32 max-[1698px]:text-xl">
+          <div className="w-56 font-bold text-2xl leading-none max-skillLm:w-32 max-skillLm:text-xl">
             {skillName}
           </div>
           <div className="flex gap-3">
@@ -54,7 +54,7 @@ const SkillItem = ({ skillId, skillName, description, stacks }: SkillsData) => {
         </div>
       </div>
       <div
-        className={`${descOpen ? "h-auto" : "h-0"} ml-56 font-pretendard ${descOpen ? "pb-6" : "pb-0"} overflow-hidden transition-all max-[1698px]:ml-32`}
+        className={`${descOpen ? "h-auto" : "h-0"} ml-56 font-pretendard ${descOpen ? "pb-6" : "pb-0"} overflow-hidden transition-all max-skillLm:ml-32`}
       >
         {description}
       </div>

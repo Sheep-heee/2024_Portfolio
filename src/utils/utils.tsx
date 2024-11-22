@@ -273,6 +273,7 @@ export const projectTab: ProjectTab[] = [
 export const experienceList: ExperienceList[] = [
   {
     type: "careers",
+    typeH: "경력",
     list: [
       {
         listId: 0,
@@ -322,6 +323,7 @@ export const experienceList: ExperienceList[] = [
   },
   {
     type: "education",
+    typeH: "교육",
     list: [
       {
         listId: 0,
@@ -340,6 +342,7 @@ export const experienceList: ExperienceList[] = [
   },
   {
     type: "certifications",
+    typeH: "자격증",
     list: [
       {
         listId: 0,
@@ -369,6 +372,7 @@ export const experienceList: ExperienceList[] = [
   },
   {
     type: "study",
+    typeH: "스터디",
     list: [
       {
         listId: 0,
