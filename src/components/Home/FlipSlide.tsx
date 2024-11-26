@@ -8,7 +8,6 @@ import { FilpActionType, updateFilp } from "../../redux/actions/cardOpenAction";
 import ContactCard from "../Common/ContactCard";
 
 const FlipSlide = () => {
-  const scrollY = useSelector((state: RootState) => state.scrollY.scrollY);
   const filpOpen = useSelector((state: RootState) => state.filpOpen.filpOpen);
   const dispatch: Dispatch<FilpActionType> = useDispatch();
   const [groups, setGroups] = useState<number[]>([0, 1, 2, 3, 4, 5, 6, 7]);
@@ -39,18 +38,9 @@ const FlipSlide = () => {
     loopAnimation();
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollY < 6596 && filpOpen === true) {
-        dispatch(updateFilp(false));
-      }
-    };
-    handleScroll();
-  }, [scrollY]);
-
   return (
     <div
-      className={`w-11/12 h-11/12 relative transition-transform duration-500 ${filpOpen ? "rotate-y-180" : "rotate-y-0"} relative preserve-3d`}
+      className={`w-11/12 h-full relative transition-transform duration-500 ${filpOpen ? "rotate-y-180" : "rotate-y-0"} preserve-3d relative`}
     >
       <div
         className="w-full h-full rounded-3xl p-4 border-3 border-grey bg-lightGrey cursor-pointer absolute backface-hidden"
@@ -69,13 +59,16 @@ const FlipSlide = () => {
           </div>
           <div className="w-48 h-12 absolute bg-lightGrey left-1/2 -translate-x-1/2"></div>
           <img
-            className="object-cover absolute left-1/2 -translate-x-1/2"
+            className="object-cover absolute left-1/2 -translate-x-1/2 max-skillMd:w-full max-skillMd:h-full"
             src="/img/pattern_blue_second.png"
             alt="contact pattern blue"
           />
         </div>
       </div>
-      <div className="w-full h-full absolute rotate-y-180 backface-hidden">
+      <div
+        className="w-full h-full absolute rotate-y-180 backface-hidden"
+        onClick={() => dispatch(updateFilp(false))}
+      >
         <ContactCard />
       </div>
     </div>

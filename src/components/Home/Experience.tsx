@@ -9,13 +9,18 @@ import ShortArrow from "../../assets/icon/ui_icon/ShortArrow";
 import ExperienceItemMb from "./ExperienceItemMb";
 
 const Experience = () => {
-  const [descOpen, setDescOpen] = useState([false, false, false, false]);
+  const [descOpen, setDescOpen] = useState({
+    careers: false,
+    education: false,
+    certifications: false,
+    study: false,
+  });
   const windowWidth = useSelector(
     (state: RootState) => state.windowWidth.windowWidth
   );
   return (
     <div className="w-full relative">
-      <div className="w-full flex justify-between items-end font-nunitoSans uppercase mb-32 max-aboutMd:flex-col max-aboutMd:items-center max-aboutSm:mb-20">
+      <div className="w-full flex justify-between items-end font-nunitoSans uppercase mb-32 max-aboutMd:flex-col max-aboutMd:items-center max-aboutSm:mb-20 max-homeSm:mb-10">
         <div className="flex flex-col text-2xl gap-2 pb-6 leading-none max-aboutMd:w-full max-aboutMd:flex-row max-aboutMd:justify-between max-homeSm:pb-3 max-homeSm:text-sm">
           <span>Journey</span>
           <span>Collaboration</span>
@@ -120,7 +125,12 @@ const Experience = () => {
               <div key={idx} className="border-b border-grey">
                 <div
                   className="flex justify-between items-center "
-                  onClick={() => setDescOpen([...descOpen, !descOpen[idx]])}
+                  onClick={() =>
+                    setDescOpen({
+                      ...descOpen,
+                      [exp.type]: !descOpen[exp.type as keyof typeof descOpen],
+                    })
+                  }
                 >
                   <div className="flex gap-1.5 items-center p-2">
                     <span className="uppercase font-nunitoSans font-bold text-2xl">
@@ -131,13 +141,13 @@ const Experience = () => {
                     </span>
                   </div>
                   <div
-                    className={`w-8 h-8 ${descOpen[idx] ? "-rotate-90" : "rotate-0"} transition-transform`}
+                    className={`w-8 h-8 ${descOpen[exp.type as keyof typeof descOpen] ? "-rotate-90" : "rotate-0"} transition-transform`}
                   >
                     <ShortArrow />
                   </div>
                 </div>
                 <div
-                  className={`${descOpen[idx] ? "h-auto" : "h-0"} font-pretendard ${descOpen[idx] ? "pb-6" : "pb-0"} overflow-hidden transition-all duration-300`}
+                  className={`${descOpen[exp.type as keyof typeof descOpen] ? "h-auto" : "h-0"} font-pretendard ${descOpen[exp.type as keyof typeof descOpen] ? "pb-6" : "pb-0"} overflow-hidden transition-all duration-300`}
                 >
                   {exp.list.map((item, index) => (
                     <ExperienceItemMb key={index} {...item} />

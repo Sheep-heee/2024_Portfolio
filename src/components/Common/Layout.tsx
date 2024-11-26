@@ -66,7 +66,7 @@ const Layout = () => {
         </div>
       )}
       <div
-        className="w-14 h-14 fixed right-10 bottom-10 rounded-full bg-mainBlack flex justify-center items-center border-2 border-bgGrey cursor-pointer"
+        className="w-14 h-14 fixed right-10 bottom-10 rounded-full bg-mainBlack flex justify-center items-center border-2 border-bgGrey cursor-pointer z-50"
         onClick={() => {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}

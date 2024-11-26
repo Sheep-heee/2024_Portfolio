@@ -1,13 +1,9 @@
-import { useLocation } from "react-router-dom";
 import Sphere from "../../assets/Sphere";
 
 const Footer = () => {
-  const { pathname } = useLocation();
-  const path = pathname.split("/")[1];
-
   return (
     <div
-      className={`w-full ${path === "project" ? "h-40 flex items-center" : "h-80 pt-44"} bg-mainBlack px-32 text-white`}
+      className={`w-full h-40 flex items-center bg-mainBlack px-32 text-white`}
     >
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center gap-5">
