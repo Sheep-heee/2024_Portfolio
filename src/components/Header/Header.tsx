@@ -34,8 +34,9 @@ const Header = ({ modal, mobileMenu }: ModalOpenSet) => {
   };
 
   const windowWidth = () => {
-    dispatchWindowWidth(updateWindowWidth(window.innerWidth));
-    console.log(window.innerWidth);
+    dispatchWindowWidth(
+      updateWindowWidth(document.documentElement.clientWidth)
+    );
   };
 
   useEffect(() => {

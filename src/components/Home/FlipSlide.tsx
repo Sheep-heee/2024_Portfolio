@@ -11,8 +11,39 @@ const FlipSlide = () => {
   const filpOpen = useSelector((state: RootState) => state.filpOpen.filpOpen);
   const dispatch: Dispatch<FilpActionType> = useDispatch();
   const [groups, setGroups] = useState<number[]>([0, 1, 2, 3, 4, 5, 6, 7]);
+  const [isProcessing, setIsProcessing] = useState(false);
   const controls = useAnimationControls();
   const groupsRef = useRef(groups);
+  const cardRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          console.log(!filpOpen && !isProcessing);
+          if (entry.intersectionRatio <= 0.5 && filpOpen && !isProcessing) {
+            setIsProcessing(true);
+            dispatch(updateFilp(false));
+            setTimeout(() => setIsProcessing(false), 300);
+          }
+        } else if (!filpOpen && !isProcessing) {
+          setIsProcessing(true);
+          setTimeout(() => setIsProcessing(false), 300);
+        }
+      },
+      { threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5] }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [filpOpen]);
 
   useEffect(() => {
     groupsRef.current = groups;
@@ -40,6 +71,7 @@ const FlipSlide = () => {
 
   return (
     <div
+      ref={cardRef}
       className={`w-11/12 h-full relative transition-transform duration-500 ${filpOpen ? "rotate-y-180" : "rotate-y-0"} preserve-3d relative`}
     >
       <div

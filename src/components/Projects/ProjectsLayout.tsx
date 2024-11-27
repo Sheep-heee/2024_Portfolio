@@ -23,13 +23,22 @@ const ProjectsLayout = () => {
 
   const windowBeginWidth = () => {
     let width;
-    if (window.innerWidth > 1902) {
+    if (document.documentElement.clientWidth > 1902) {
       width = (document.documentElement.clientWidth - 256 - 96) / 3;
-    } else if (window.innerWidth > 1620) {
+    } else if (
+      document.documentElement.clientWidth <= 1902 &&
+      document.documentElement.clientWidth > 1620
+    ) {
       width = (document.documentElement.clientWidth - 256 - 80) / 3;
-    } else if (window.innerWidth <= 1620 && window.innerWidth > 1200) {
+    } else if (
+      document.documentElement.clientWidth <= 1620 &&
+      document.documentElement.clientWidth > 1200
+    ) {
       width = (document.documentElement.clientWidth - 256 - 40) / 2;
-    } else if (window.innerWidth <= 1200 && window.innerWidth > 1000) {
+    } else if (
+      document.documentElement.clientWidth <= 1200 &&
+      document.documentElement.clientWidth > 1000
+    ) {
       width = (document.documentElement.clientWidth - 48 - 40) / 2;
     } else {
       width = document.documentElement.clientWidth - 48;
@@ -89,9 +98,9 @@ const ProjectsLayout = () => {
 
   const calculateItemWidth = (width: number) => {
     if (width > 1902) return (width - 256 - 96) / 3;
-    if (width > 1620) return (width - 256 - 80) / 3;
-    if (width > 1200) return (width - 256 - 40) / 2;
-    if (width > 1000) return (width - 48 - 40) / 2;
+    if (width <= 1902 && width > 1620) return (width - 256 - 80) / 3;
+    if (width <= 1620 && width > 1200) return (width - 256 - 40) / 2;
+    if (width <= 1200 && width > 1000) return (width - 48 - 40) / 2;
     return width - 48;
   };
 
@@ -137,7 +146,7 @@ const ProjectsLayout = () => {
             animate={controls}
             className={`w-fit flex gap-12 ${(windowWidth > 1620 && newProjectData.length > 3) || (windowWidth <= 1620 && windowWidth > 1000 && newProjectData.length > 2) || (windowWidth <= 1000 && newProjectData.length > 1) ? "relative" : ""} max-projectXlg:gap-10`}
             style={{
-              left: `-${newProjectData.length > 3 && windowWidth > 1903 ? projectItemWidth * 3 + 48 * 3 : newProjectData.length > 3 && windowWidth <= 1903 && windowWidth > 1620 ? projectItemWidth * 3 + 40 * 3 : newProjectData.length > 2 && windowWidth <= 1620 && windowWidth > 1000 ? projectItemWidth * 2 + 40 * 2 : newProjectData.length > 1 && windowWidth <= 1000 ? projectItemWidth + 40 : 0}px`,
+              left: `-${newProjectData.length > 3 && windowWidth > 1902 ? projectItemWidth * 3 + 48 * 3 : newProjectData.length > 3 && windowWidth <= 1902 && windowWidth > 1620 ? projectItemWidth * 3 + 40 * 3 : newProjectData.length > 2 && windowWidth <= 1620 && windowWidth > 1000 ? projectItemWidth * 2 + 40 * 2 : newProjectData.length > 1 && windowWidth <= 1000 ? projectItemWidth + 40 : 0}px`,
             }}
           >
             {dupProjectData.map((data: ProjectData, idx) => (
