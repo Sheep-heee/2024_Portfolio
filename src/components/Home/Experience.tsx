@@ -37,6 +37,7 @@ const Experience = () => {
               <div className="flex flex-col gap-4 flex-1">
                 {experienceList[0].list.slice(0, 3).map((careers) => (
                   <ExperienceItem
+                    key={careers.listId}
                     date={careers.date}
                     title={careers.title}
                     description={careers.description}
@@ -47,6 +48,7 @@ const Experience = () => {
               <div className="flex flex-col gap-4 flex-1">
                 {experienceList[0].list.slice(3).map((careers) => (
                   <ExperienceItem
+                    key={careers.listId}
                     date={careers.date}
                     title={careers.title}
                     description={careers.description}
@@ -70,6 +72,7 @@ const Experience = () => {
                 <div className="flex flex-col gap-4 pt-10">
                   {experienceList[1].list.map((edu) => (
                     <ExperienceItem
+                      key={edu.listId}
                       date={edu.date}
                       title={edu.title}
                       description={edu.description}
@@ -84,6 +87,7 @@ const Experience = () => {
                 <div className="flex flex-col gap-4 pt-10">
                   {experienceList[2].list.slice(0, 2).map((certification) => (
                     <ExperienceItem
+                      key={certification.listId}
                       date={certification.date}
                       title={certification.title}
                       description={certification.description}
@@ -93,6 +97,7 @@ const Experience = () => {
                 <div className="flex flex-col gap-4 pt-10 max-homeMd:p-0">
                   {experienceList[2].list.slice(2).map((certification) => (
                     <ExperienceItem
+                      key={certification.listId}
                       date={certification.date}
                       title={certification.title}
                       description={certification.description}
@@ -107,6 +112,7 @@ const Experience = () => {
                 <div className="flex flex-col gap-4 pt-10">
                   {experienceList[3].list.map((study) => (
                     <ExperienceItem
+                      key={study.listId}
                       date={study.date}
                       title={study.title}
                       description={study.description}

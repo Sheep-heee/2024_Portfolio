@@ -57,7 +57,7 @@ const FlipSlide = () => {
               ))}
             </motion.div>
           </div>
-          <div className="w-48 h-12 absolute bg-lightGrey left-1/2 -translate-x-1/2"></div>
+          <div className="w-48 h-12 absolute bg-lightGrey left-1/2 -translate-x-1/2 max-projectXsm:w-20"></div>
           <img
             className="object-cover absolute left-1/2 -translate-x-1/2 max-skillMd:w-full max-skillMd:h-full"
             src="/img/pattern_blue_second.png"
