@@ -6,7 +6,7 @@ const ToolItem = ({ toolsName, iconCode }: Stack) => {
       <div className="w-5 h-5 object-cover rounded overflow-hidden max-skillLg:w-3 max-skillLg:h-3 max-skillLg:rounded-sm">
         {iconCode}
       </div>
-      <span className="font-bold text-xl leading-none max-skillLg:text-base">
+      <span className="font-bold text-xl leading-none max-skillLg:text-base max-projectXsm:whitespace-nowrap">
         {toolsName}
       </span>
     </div>

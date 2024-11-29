@@ -9,10 +9,10 @@ interface ProjectThumProps {
 }
 
 const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
-  const stackList: Stack[] = [];
+  let stackList: Stack[] = [];
 
   (() => {
-    skillsData.map((data) => {
+    skillsData.forEach((data) => {
       stackList.push(...data.stacks);
     });
   })();
@@ -32,9 +32,8 @@ const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
       <div className="w-fit flex gap-2 items-center z-10 text-mainBlack text-nowrap flex-wrap">
         {toolId.slice(0, 2).map((item: number, index) =>
           index === toolId.slice(0, 2).length - 1 && toolId.length > 2 ? (
-            <div className="flex gap-2">
+            <div className="flex gap-2" key={index}>
               <ToolItem
-                key={index}
                 toolId={stackList[item].toolId}
                 toolsName={stackList[item].toolsName}
                 iconCode={stackList[item].iconCode}

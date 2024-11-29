@@ -12,8 +12,10 @@ const MySkillsTitle = () => {
 
     const itemWidth = itemRef.current !== null && itemRef.current.clientWidth;
 
+    let isMount = true;
+
     const loopAnimation = async () => {
-      while (true) {
+      while (isMount) {
         await controls.start({
           x: -itemWidth,
           transition: { duration: 6, ease: "linear" },
@@ -32,6 +34,10 @@ const MySkillsTitle = () => {
     };
 
     loopAnimation();
+
+    return () => {
+      isMount = false;
+    };
   }, []);
 
   return (

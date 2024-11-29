@@ -4,9 +4,9 @@ const SmallArrow = () => {
       <path
         d="M26.5 14L14 1.5L1.5 14"
         stroke="white"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

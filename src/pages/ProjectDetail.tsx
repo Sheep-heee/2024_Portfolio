@@ -100,7 +100,7 @@ const ProjectDetail = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex gap-6 font-nunitoSans text-2xl items-center max-headerSm:text-lg max-aboutXsm:gap-2">
+              <div className="flex gap-6 font-nunitoSans text-2xl max-headerSm:text-lg max-aboutXsm:gap-2 max-aboutXsm:items-center">
                 <div className="font-bold">Stack</div>
                 <div className="flex flex-col gap-2">
                   {divideTools.map((row, idx) => (

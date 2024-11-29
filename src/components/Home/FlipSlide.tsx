@@ -47,8 +47,10 @@ const FlipSlide = () => {
   useEffect(() => {
     groupsRef.current = groups;
 
+    let isMount = true;
+
     const loopAnimation = async () => {
-      while (true) {
+      while (isMount) {
         await controls.start({
           x: -252,
           transition: { duration: 6, ease: "linear" },
@@ -66,6 +68,10 @@ const FlipSlide = () => {
       }
     };
     loopAnimation();
+
+    return () => {
+      isMount = false;
+    };
   }, []);
 
   return (

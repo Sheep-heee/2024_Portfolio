@@ -8,9 +8,9 @@ const ShortArrow = () => {
     >
       <path
         d="M7.32153 17.7834L27.2898 17.7834M7.32153 17.7834L15.8794 9.22562M7.32153 17.7834L15.8794 26.3413"
-        stroke-width="1.55597"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.55597"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
