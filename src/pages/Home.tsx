@@ -88,7 +88,14 @@ const Home = () => {
         <div className="hidden px-8 pb-8 w-full h-110 relative max-homeSm:block">
           <AboutClipImageSm />
         </div>
-        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20 max-aboutXlg:w-380 max-aboutLg:w-11/12 max-aboutMd:top-48 max-aboutSm:top-40 max-skillMd:w-full max-skillMd:rounded-none max-skillMd:justify-center max-homeMd:top-20 max-homeSm:static">
+        {windowWidth < 839 && (
+          <img
+            className="w-108 absolute -top-16 left-1/2 -translate-x-1/2"
+            src="/img/profile_transparent.png"
+            alt="My Profile Photo"
+          />
+        )}
+        <div className="w-400 h-120 absolute top-80 right-0 bg-mainBlack rounded-l-full flex items-center gap-20 max-aboutXlg:w-380 max-aboutLg:w-11/12 max-aboutMd:top-48 max-aboutSm:top-40 max-skillMd:w-full max-skillMd:rounded-none max-skillMd:justify-center max-homeMd:top-20 max-homeSm:top-0 max-homeSm:relative">
           <div className="ml-56 font-pretendard flex flex-col gap-5 max-aboutXlg:w-187.5 max-aboutLg:w-11/12 max-skillMd:ml-0">
             {windowWidth > 1613 ? (
               <span className="text-white text-4xl font-semibold">
@@ -161,8 +168,8 @@ const Home = () => {
             </div>
           </div>
           {windowWidth > 1360 && (
-            <div className="w-80 h-96 bg-blue rounded-xl flex items-center justify-center text-white max-aboutLg:mr-28 max-aboutLg:flex-none ">
-              Photo
+            <div className="w-80 h-96 bg-blue rounded-xl flex items-center justify-center text-white overflow-hidden max-aboutLg:mr-28 max-aboutLg:flex-none">
+              <img src="/img/profile.png" alt="My Profile Photo" />
             </div>
           )}
         </div>

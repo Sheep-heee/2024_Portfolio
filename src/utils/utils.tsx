@@ -55,27 +55,27 @@ export const mainMenuMO: MenuItem[] = [
   {
     id: 0,
     name: "ABOUT ME",
-    scrollTo: 0,
+    scrollTo: 500,
   },
   {
     id: 1,
     name: "SKILLS",
-    scrollTo: 0,
+    scrollTo: 1100,
   },
   {
     id: 2,
     name: "PROJECTS",
-    scrollTo: 0,
+    scrollTo: 2300,
   },
   {
     id: 3,
     name: "EXPERIENCES",
-    scrollTo: 0,
+    scrollTo: 3200,
   },
   {
     id: 4,
     name: "CONTACT",
-    scrollTo: 0,
+    scrollTo: 3800,
   },
 ];
 

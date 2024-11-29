@@ -47,6 +47,7 @@ export default {
         titleSpacing: "-0.03em",
       },
       lineHeight: {
+        veryTight: "1.1",
         7.5: "30px",
       },
       borderWidth: {

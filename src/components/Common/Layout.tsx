@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { RootState } from "../../redux/reducers";
@@ -18,6 +18,7 @@ const Layout = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [smallMenuOpen, setSmallMenuOpen] = useState(false);
+  const navigate = useNavigate();
   const { pathname } = useLocation();
   const lastScrollY = useRef(0);
 
@@ -76,7 +77,7 @@ const Layout = () => {
         </div>
       </div>
       <div
-        className={`hidden w-full h-screen fixed top-0 transition-all duration-300 ${smallMenuOpen ? "left-0" : "-left-full"} z-50  font-nunitoSans bg-bgGrey max-[675px]:block`}
+        className={`hidden w-full h-screen fixed top-0 transition-all duration-300 ${smallMenuOpen ? "left-0" : "-left-full"} z-50  font-nunitoSans bg-bgGrey max-headerSm:block`}
       >
         <div className="h-24 px-6 flex items-center">
           <div className="w-full h-fit flex justify-between items-center">
@@ -99,6 +100,14 @@ const Layout = () => {
                   <div
                     key={menu.id}
                     className="text-5xl font-bold text-center cursor-pointer"
+                    onClick={() => {
+                      pathname === "/" ? null : navigate("/");
+                      window.scrollTo({
+                        top: menu.scrollTo,
+                        behavior: "smooth",
+                      });
+                      setSmallMenuOpen(false);
+                    }}
                   >
                     {menu.name}
                   </div>

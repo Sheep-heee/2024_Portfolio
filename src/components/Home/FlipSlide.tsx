@@ -20,7 +20,6 @@ const FlipSlide = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {
-          console.log(!filpOpen && !isProcessing);
           if (entry.intersectionRatio <= 0.5 && filpOpen && !isProcessing) {
             setIsProcessing(true);
             dispatch(updateFilp(false));

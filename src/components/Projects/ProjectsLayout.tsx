@@ -15,6 +15,7 @@ const ProjectsLayout = () => {
   const [newTab, setNewTab] = useState(projectTab);
   const [newProjectData, setNewProjectData] = useState(projectData);
   const [dupProjectData, setDupProjectData] = useState([...newProjectData]);
+  const [isAnimating, setIsAnimating] = useState(false);
   const controls = useAnimationControls();
 
   const windowWidth = useSelector(
@@ -67,6 +68,7 @@ const ProjectsLayout = () => {
   };
 
   const dataSlideFuc = async (num: number) => {
+    if (isAnimating) return;
     if (
       (windowWidth > 1620 && newProjectData.length < 4) ||
       (windowWidth <= 1620 &&
@@ -75,6 +77,8 @@ const ProjectsLayout = () => {
       (windowWidth <= 1000 && newProjectData.length < 2)
     )
       return;
+
+    setIsAnimating(true);
 
     let xWidth =
       windowWidth > 1902 ? projectItemWidth + 48 : projectItemWidth + 40;
@@ -94,6 +98,8 @@ const ProjectsLayout = () => {
 
     setNewProjectData(updatedItems);
     controls.set({ x: 0 });
+
+    setIsAnimating(false);
   };
 
   const calculateItemWidth = (width: number) => {
