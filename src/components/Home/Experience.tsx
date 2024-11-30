@@ -153,7 +153,7 @@ const Experience = () => {
                   </div>
                 </div>
                 <div
-                  className={`${descOpen[exp.type as keyof typeof descOpen] ? "h-auto" : "h-0"} font-pretendard ${descOpen[exp.type as keyof typeof descOpen] ? "pb-6" : "pb-0"} overflow-hidden transition-all duration-300`}
+                  className={`${descOpen[exp.type as keyof typeof descOpen] ? "h-auto" : "h-0"} font-pretendard ${descOpen[exp.type as keyof typeof descOpen] ? "pb-6" : "pb-0"} overflow-hidden transition-all duration-300 cursor-pointer`}
                 >
                   {exp.list.map((item, index) => (
                     <ExperienceItemMb key={index} {...item} />

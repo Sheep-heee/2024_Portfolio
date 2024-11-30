@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.firebaserc
+.firebase
+firebase.json
+tsconfig.app.tsbuildinfo
+tsconfig.node.tsbuildinfo
