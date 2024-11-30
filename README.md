@@ -16,7 +16,7 @@
 - **애니메이션**: Framer Motion, CSS
 - **상태관리**: Redux, React-Redux
 - **버전 관리**: Git, GitHub
-- **데이터베이스 및 호스팅**: Supabase
+- **데이터베이스 및 호스팅**: Firebase
 
 &nbsp;
 
