@@ -8,13 +8,13 @@ import {
   NextIcon,
   ReactReduxIcon,
   ReactQueryIcon,
+  RecoilIcon,
   SCSSIcon,
   StyledIcon,
   TailwindIcon,
-  FMIcon,
   FirebaseIcon,
   NodeIcon,
-  NestIcon,
+  SupabaseIcon,
   RestApiIcon,
   GraphQLIcon,
   ApolloIcon,
@@ -83,8 +83,23 @@ export const skillsData: SkillsData[] = [
   {
     skillId: 0,
     skillName: "Publishing",
-    description:
-      "HTML, CSS를 사용하여 웹페이지를 구현한 뒤 Javascript로 동적인 사용자 경험을 제공할 수 있습니다.",
+    description: [
+      {
+        title: "HTML5",
+        detail:
+          "웹 표준을 준수하며, 시맨틱 태그를 활용해 가독성과 접근성이 높은 구조적인 마크업을 작성 할 수 있습니다.",
+      },
+      {
+        title: "CSS3",
+        detail:
+          "Flexbox와 Grid를 사용하여 효율적인 레이아웃을 구성하고, Animation과 Transition으로 인터랙티브한 사용자 경험을 제공합니다. 또한 미디어 쿼리를 통해 다양한 디바이스에 대응하는 반응형 웹을 제작합니다.",
+      },
+      {
+        title: "Javascript",
+        detail:
+          "Vanilla JavaScript로 동적 콘텐츠를 구현하고 JSON Fetch를 활용한 데이터 통신에도 익숙합니다.",
+      },
+    ],
     stacks: [
       {
         toolId: 0,
@@ -106,8 +121,23 @@ export const skillsData: SkillsData[] = [
   {
     skillId: 1,
     skillName: "Frontend",
-    description:
-      "React.js와 typescript로 웹페이지의 전체적인 구조를 정의하고 기능을 추가 React-Redux와 React-Query로 상태 관리를 통해 효율적인 데이터 흐름을 구축하고, 비동기 데이터 처리를 최적화합니다. 스타일 도구들을 사용해서 사용자에게 시각적으로 매력적이고 일관된 UI를 제공합니다.",
+    description: [
+      {
+        title: "React 기반 기술",
+        detail:
+          "React.js와 TypeScript를 활용해 유지보수성이 높은 컴포넌트를 설계하고, 타입 안정성을 확보하여 안정적인 서비스를 개발할 수 있습니다. Next.js를 활용해 서버사이드 렌더링을 구현해보았습니다.",
+      },
+      {
+        title: "상태 관리 도구",
+        detail:
+          "React-Redux, React-Query, Recoil을 활용해 글로벌 상태를 관리하고 공유한 경험이 있습니다.",
+      },
+      {
+        title: "스타일링",
+        detail:
+          "SCSS를 활용해 변수, 믹스인 등의 관리가 용이한 스타일을 작성할 수 있으며, Styled-Components을 사용한 컴포넌트 기반의 스타일링과 유틸리티 클래스 기반인 Tailwind CSS를 사용해 일관된 스타일링과 커스터마이징 경험이 있습니다.",
+      },
+    ],
     stacks: [
       {
         toolId: 3,
@@ -135,6 +165,11 @@ export const skillsData: SkillsData[] = [
         iconCode: <ReactQueryIcon />,
       },
       {
+        toolId: 11,
+        toolsName: "Recoil",
+        iconCode: <RecoilIcon />,
+      },
+      {
         toolId: 8,
         toolsName: "SCSS",
         iconCode: <SCSSIcon />,
@@ -149,18 +184,28 @@ export const skillsData: SkillsData[] = [
         toolsName: "Tailwind CSS",
         iconCode: <TailwindIcon />,
       },
-      {
-        toolId: 11,
-        toolsName: "Framer-Motion",
-        iconCode: <FMIcon />,
-      },
     ],
   },
   {
     skillId: 2,
     skillName: "Backend",
-    description:
-      "Firebase로 웹사이트의 배포와 데이터의 보관을 관리하는 기능을 사용할 수 있습니다. API 데이터를 페이지에 연결하여 화면에 출력될 수 있도록 불러올 수 있습니다.",
+    description: [
+      {
+        title: "클라우드 백엔드 서비스",
+        detail:
+          "Firebase를 통해 인증(Authentication), 저장소(Storage), 호스팅을 활용한 웹사이트 배포 경험이 있으며, Supabase로 데이터베이스 관리 및 웹사이트 배포를 해보았습니다.",
+      },
+      {
+        title: "Node.js",
+        detail:
+          "Node.js와 MongoDB를 활용한 서버 로직을 구현한 경험이 있습니다.",
+      },
+      {
+        title: "API",
+        detail:
+          "REST API형식의 외부 데이터를 활용해 서비스를 구축하였으며, GraphQL의 구조를 이해하고 필요한 데이터만 요청하여 데이터 전송의 효율성을 높혔습니다.",
+      },
+    ],
     stacks: [
       {
         toolId: 12,
@@ -169,13 +214,13 @@ export const skillsData: SkillsData[] = [
       },
       {
         toolId: 13,
-        toolsName: "Node.js",
-        iconCode: <NodeIcon />,
+        toolsName: "Supabase",
+        iconCode: <SupabaseIcon />,
       },
       {
         toolId: 14,
-        toolsName: "Nest.js",
-        iconCode: <NestIcon />,
+        toolsName: "Node.js",
+        iconCode: <NodeIcon />,
       },
       {
         toolId: 15,
@@ -197,8 +242,23 @@ export const skillsData: SkillsData[] = [
   {
     skillId: 3,
     skillName: "Graphic",
-    description:
-      "Figma를 이용하여 사용자 경험을 위한 ui/ux 디자인을 설계할 수 있습니다. Adobe 툴을 사용하여 그래픽 작업이 가능합니다.",
+    description: [
+      {
+        title: "Figma",
+        detail:
+          "툴을 활용해 UI/UX디자인을 수행하였으며 실시간 협업 기능으로 팀원들과 소통해 디자인의 방향성을 잡을 수 있었습니다. 컴포넌트 및 스타일 시스템으로 일관성 있는 디자인 시스템을 구축하였습니다.",
+      },
+      {
+        title: "Adobe Photoshop",
+        detail:
+          "이미지 보정 및 합성으로 그래픽을 제작하며 배너와 포스터와 같은 마케팅 자료를 디자인할 수 있습니다.",
+      },
+      {
+        title: "Adobe Illustrator",
+        detail:
+          "일러스트와 UI에 사용되는 벡터 요소를 제작할 수 있으며 패스와 쉐이프 도구로 더 정밀한 도형을 구현할 수 있습니다.",
+      },
+    ],
     stacks: [
       {
         toolId: 18,
@@ -220,8 +280,23 @@ export const skillsData: SkillsData[] = [
   {
     skillId: 4,
     skillName: "Productivity",
-    description:
-      "GitHub을 통해 코드와 프로젝트 관리를 할 수 있습니다. notion 등을 비롯한 툴로 문서 작업이 가능합니다.",
+    description: [
+      {
+        title: "GitHub",
+        detail:
+          "Git을 기반으로 프로젝트의 버전과 코드을 관리하며 다른 팀원들과의 협업을 효율적으로 수행하였습니다.",
+      },
+      {
+        title: "협업",
+        detail:
+          "Slack을 사용해 실시간 소통을 이루었으며 Notion으로 프로젝트를 문서화해 로그 등을 기록하여 공유하였습니다.",
+      },
+      {
+        title: "문서작업",
+        detail:
+          "Google Docs, MS Word등을 활용해 문서를 작성한 경험이 있으며 Google Sheet, MS Excel을 이용해 간단한 통계 작업 및 계산 작업을 수행하였습니다.",
+      },
+    ],
     stacks: [
       {
         toolId: 21,

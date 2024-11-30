@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# 💖 Welcome to my Portfolio Project!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+안녕하세요! **프론트엔드 개발자 양희진**입니다.
 
-Currently, two official plugins are available:
+이 포트폴리오는 간략한 제 소개와 함께 프론트엔드 개발자로서 진행한 프로젝트들을 담고 있습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+다양한 프로젝트들을 통해 **제 기술과 역량을 확인**해보세요!
 
-## Expanding the ESLint configuration
+아래 링크에서 실제 구현된 페이지를 방문하실 수 있습니다.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+&nbsp;
 
-- Configure the top-level `parserOptions` property like this:
+## 🌐 사용 기술
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **프론트엔드**: React, TypeScript, Tailwind CSS
+- **애니메이션**: Framer Motion, CSS
+- **상태관리**: Redux, React-Redux
+- **버전 관리**: Git, GitHub
+- **데이터베이스 및 호스팅**: Supabase
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+&nbsp;
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🔅 주요 기능
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- 다양한 기기의 해상도에 반응하여 변화하는 반응형 디자인 및 개발
+- Vanilla CSS로 구현한 3D 구 (Sphere)
+
+  참고한 코드 https://codepen.io/CapySloth/pen/KvppPG
+
+- 스크롤 트리거를 활용한 애니메이션
+
+&nbsp;
+
+## 📢 연락처
+
+✉ sheephi0609@gmail.com

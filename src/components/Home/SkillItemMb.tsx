@@ -29,9 +29,14 @@ const SkillItem = ({ skillName, description, stacks }: SkillsData) => {
         </div>
       </div>
       <div
-        className={`${descOpen ? "h-auto" : "h-0"} font-pretendard ${descOpen ? "pb-6" : "pb-0"} overflow-hidden transition-all`}
+        className={`${descOpen ? "h-auto" : "h-0"} font-pretendard ${descOpen ? "pb-6" : "pb-0"} overflow-hidden transition-all flex flex-col`}
       >
-        {description}
+        {description.map((detail, idx) => (
+          <span key={idx} className="grid grid-cols-5 gap-3">
+            <span className="font-bold">{detail.title}</span>
+            <span className="col-span-4">{detail.detail}</span>
+          </span>
+        ))}
       </div>
     </div>
   );

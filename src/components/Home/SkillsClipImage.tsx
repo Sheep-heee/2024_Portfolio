@@ -61,6 +61,11 @@ const SkillsClipImage = () => {
           alt="graphic image"
           className="absolute top-52 -right-16 scale-125"
         />
+        <img
+          src="/img/graphic02.png"
+          alt="graphic image"
+          className="absolute -bottom-52 -left-16 rotate-180 scale-125"
+        />
       </div>
       <div
         className="w-32 h-32 absolute right-20"

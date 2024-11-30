@@ -19,10 +19,15 @@ export interface Stack {
   iconCode: React.ReactNode;
 }
 
+export interface StackDescription {
+  title: string;
+  detail: string;
+}
+
 export interface SkillsData {
   skillId: number;
   skillName: string;
-  description: string;
+  description: StackDescription[];
   stacks: Stack[];
 }
 
