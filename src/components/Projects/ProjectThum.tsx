@@ -18,7 +18,7 @@ const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
   })();
 
   return (
-    <div className="w-full h-full flex flex-col justify-between rounded-2xl overflow-hidden p-6 relative">
+    <div className="w-full h-full flex flex-col justify-between rounded-2xl overflow-hidden p-6 relative shadow">
       <img
         className="w-full h-full object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0 transition-transform duration-300 hover:scale-110 max-[768px]:hover:scale-100"
         src={thumbnail}
@@ -38,7 +38,7 @@ const ProjectThum = ({ thumbnail, scale, toolId }: ProjectThumProps) => {
                 toolsName={stackList[item].toolsName}
                 iconCode={stackList[item].iconCode}
               />
-              <div className="font-bold text-xl leading-none py-2 px-3 rounded-xl bg-white text-mainBlack max-[1600px]:py-0 max-[1600px]:px-3 max-[1600px]:rounded-md max-[1600px]:text-base">
+              <div className="font-bold text-xl leading-none py-2 px-3 rounded-xl shadow-inner border border-lightGrey bg-white text-mainBlack max-[1600px]:py-0 max-[1600px]:px-3 max-[1600px]:rounded-md max-[1600px]:text-base">
                 +{toolId.length - 2}
               </div>
             </div>
